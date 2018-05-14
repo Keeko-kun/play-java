@@ -1,0 +1,8 @@
+[0m[[0m[31merror[0m] [0m[0mC:\Users\user\Documents\play-java\app\controllers\HomeController.java:35:1:  error: cannot find symbol[0m
+[0m[[0m[31merror[0m] [0m[0m            Cake cake;[0m
+[0m[[0m[31merror[0m] [0m[0m            ^^  symbol:   class Cake[0m
+[0m[[0m[31merror[0m] [0m[0m  location: class HomeController[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\user\Documents\play-java\app\controllers\HomeController.java:36:1:  error: cannot find symbol[0m
+[0m[[0m[31merror[0m] [0m[0m            cake = new Cake("choco");[0m
+[0m[[0m[31merror[0m] [0m[0m                       ^^  symbol:   class Cake[0m
+[0m[[0m[31merror[0m] [0m[0m  location: class HomeController[0m
