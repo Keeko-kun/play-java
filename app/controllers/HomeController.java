@@ -28,6 +28,10 @@ public class HomeController extends Controller {
         return ok(index.render("Your new application is ready."));
     }
 
+    public Result app() {
+        return  ok(app.render());
+    }
+
     public Result cake(){
         Session session = HibernateUtil.factory().openSession();
         Transaction tx = null;

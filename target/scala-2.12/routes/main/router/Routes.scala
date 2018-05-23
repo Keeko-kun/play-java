@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/user/Documents/play-java/conf/routes
-// @DATE:Mon May 14 10:54:14 CEST 2018
+// @DATE:Tue May 15 09:03:48 CEST 2018
 
 package router
 
@@ -52,6 +52,7 @@ class Routes(
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """message""", """controllers.AsyncController.message"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """assets/""" + "$" + """file<.+>""", """controllers.Assets.versioned(path:String = "/public", file:Asset)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """cake""", """controllers.HomeController.cake"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """app""", """controllers.HomeController.app"""),
     Nil
   ).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
     case r @ (_,_,_) => s :+ r.asInstanceOf[(String,String,String)]
@@ -149,6 +150,24 @@ class Routes(
     )
   )
 
+  // @LINE:17
+  private[this] lazy val controllers_HomeController_app5_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("app")))
+  )
+  private[this] lazy val controllers_HomeController_app5_invoker = createInvoker(
+    HomeController_0.app,
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.HomeController",
+      "app",
+      Nil,
+      "GET",
+      this.prefix + """app""",
+      """""",
+      Seq()
+    )
+  )
+
 
   def routes: PartialFunction[RequestHeader, Handler] = {
   
@@ -180,6 +199,12 @@ class Routes(
     case controllers_HomeController_cake4_route(params@_) =>
       call { 
         controllers_HomeController_cake4_invoker.call(HomeController_0.cake)
+      }
+  
+    // @LINE:17
+    case controllers_HomeController_app5_route(params@_) =>
+      call { 
+        controllers_HomeController_app5_invoker.call(HomeController_0.app)
       }
   }
 }

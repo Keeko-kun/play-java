@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/user/Documents/play-java/conf/routes
-// @DATE:Mon May 14 10:54:14 CEST 2018
+// @DATE:Tue May 15 09:03:48 CEST 2018
 
 import play.api.mvc.Call
 
@@ -32,6 +32,12 @@ package controllers {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
+  
+    // @LINE:17
+    def app(): Call = {
+      
+      Call("GET", _prefix + { _defaultPrefix } + "app")
+    }
   
     // @LINE:15
     def cake(): Call = {
