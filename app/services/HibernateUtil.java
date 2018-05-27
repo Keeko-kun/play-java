@@ -13,9 +13,11 @@ public class HibernateUtil {
             // Create the SessionFactory from standard (hibernate.cfg.xml)
             // config file.
             Thread.currentThread().setContextClassLoader(Cake.class.getClassLoader());
+            Thread.currentThread().setContextClassLoader(Game.class.getClassLoader());
             sessionFactory = new Configuration()
                     .configure()
                     .addAnnotatedClass(Cake.class)
+                    .addAnnotatedClass(Game.class)
                     .buildSessionFactory();
         } catch (Throwable ex) {
             // Log the exception.

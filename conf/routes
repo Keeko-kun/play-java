@@ -15,3 +15,11 @@ GET     /assets/*file               controllers.Assets.versioned(path="/public",
 GET /cake       controllers.HomeController.cake
 
 GET /app        controllers.HomeController.app
+
+GET /gamejson   controllers.GameController.gamejson
+
+POST /addgame    controllers.GameController.newGame
+
+GET /getgame    controllers.GameController.getGame
+
+PUT /updategame controllers.GameController.updateGame
