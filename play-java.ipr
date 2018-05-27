@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="Database" uuid="b48594ed-fd57-4fe1-b825-d2a86740fbe7">
+      <driver-ref>sqlserver.ms</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <jdbc-driver>com.microsoft.sqlserver.jdbc.SQLServerDriver</jdbc-driver>
+      <jdbc-url>jdbc:sqlserver://mssql.fhict.local:1433;database=dbi372192</jdbc-url>
+      <driver-properties>
+        <property name="applicationName" value="DataGrip" />
+      </driver-properties>
+    </data-source>
+  </component>
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
       <projects_view />
@@ -31,7 +43,7 @@
       <module fileurl="file://$PROJECT_DIR$/play-java.iml" filepath="$PROJECT_DIR$/play-java.iml" />
     </modules>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="false" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/classes" />
   </component>
   <component name="PropertiesComponent">
@@ -122,6 +134,36 @@
   </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+  </component>
+  <component name="dataSourceStorageLocal">
+    <data-source name="Database" uuid="b48594ed-fd57-4fe1-b825-d2a86740fbe7">
+      <database-info product="Microsoft SQL Server" version="12.00.5579" jdbc-version="4.2" driver-name="Microsoft JDBC Driver 6.4 for SQL Server" driver-version="6.4.0.0">
+        <extra-name-characters>$#@</extra-name-characters>
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed" />
+      <user-name>dbi372192</user-name>
+      <introspection-schemas>dbi372192:dbo</introspection-schemas>
+    </data-source>
+  </component>
+  <component name="libraryTable">
+    <library name="Hibernate 5.2.16-5.2.16" type="hibernate">
+      <properties version="5.2.16" />
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/lib/hibernate-core-5.2.16.Final.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/antlr-2.7.7.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/hibernate-jpa-2.1-api-1.0.0.Final.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/jboss-logging-3.3.1.Final.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/classmate-1.3.0.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/dom4j-1.6.1.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/hibernate-commons-annotations-5.0.1.Final.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/javassist-3.22.0-GA.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/jandex-2.0.3.Final.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/jboss-transaction-api_1.2_spec-1.0.1.Final.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
   </component>
   <component name="masterDetails">
     <states>

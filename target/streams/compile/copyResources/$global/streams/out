@@ -1,5 +1,5 @@
 [0m[[0m[0mdebug[0m] [0m[0mCopy resource mappings: [0m
-[0m[[0m[0mdebug[0m] [0m[0m	(C:\Users\user\Documents\play-java\conf\application.conf,C:\Users\user\Documents\play-java\target\scala-2.12\classes\application.conf)[0m
-[0m[[0m[0mdebug[0m] [0m[0m	(C:\Users\user\Documents\play-java\conf\hibernate.cfg.xml,C:\Users\user\Documents\play-java\target\scala-2.12\classes\hibernate.cfg.xml)[0m
-[0m[[0m[0mdebug[0m] [0m[0m	(C:\Users\user\Documents\play-java\conf\logback.xml,C:\Users\user\Documents\play-java\target\scala-2.12\classes\logback.xml)[0m
-[0m[[0m[0mdebug[0m] [0m[0m	(C:\Users\user\Documents\play-java\conf\routes,C:\Users\user\Documents\play-java\target\scala-2.12\classes\routes)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(C:\Users\ShiMapleLeaf\Documents\play-java\conf\application.conf,C:\Users\ShiMapleLeaf\Documents\play-java\target\scala-2.12\classes\application.conf)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(C:\Users\ShiMapleLeaf\Documents\play-java\conf\hibernate.cfg.xml,C:\Users\ShiMapleLeaf\Documents\play-java\target\scala-2.12\classes\hibernate.cfg.xml)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(C:\Users\ShiMapleLeaf\Documents\play-java\conf\logback.xml,C:\Users\ShiMapleLeaf\Documents\play-java\target\scala-2.12\classes\logback.xml)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(C:\Users\ShiMapleLeaf\Documents\play-java\conf\routes,C:\Users\ShiMapleLeaf\Documents\play-java\target\scala-2.12\classes\routes)[0m

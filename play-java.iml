@@ -4,7 +4,7 @@
     <facet type="hibernate" name="Hibernate">
       <configuration>
         <datasource-map>
-          <unit-entry name="conf:hibernate.cfg.xml" />
+          <unit-entry name="conf:hibernate.cfg.xml" value="7c3e54e3-4229-45ef-9bd3-bf79bfdc407e" />
         </datasource-map>
         <naming-strategy-map />
         <deploymentDescriptor name="hibernate.cfg.xml" url="file://$MODULE_DIR$/conf/hibernate.cfg.xml" />
@@ -19,5 +19,6 @@
     <orderEntry type="library" name="hibernate-core-5.2.17.Final" level="project" />
     <orderEntry type="library" name="mssql-jdbc-6.4.0.jre8" level="project" />
     <orderEntry type="library" name="persistence-api-1.0.2" level="project" />
+    <orderEntry type="library" name="Hibernate 5.2.16-5.2.16" level="project" />
   </component>
 </module>
