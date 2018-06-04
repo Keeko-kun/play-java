@@ -21,6 +21,12 @@ public class GameController extends Controller {
        return ok(Json.toJson(game));
    }
 
+   public Result addUser(){
+        UserRepo repo = new UserRepo();
+        JsonNode json = repo.AddUser();
+        return ok(json);
+   }
+
    public Result newGame(){
         GameRepo repo = new GameRepo();
         JsonNode json = repo.AddGame("Dark Souls: Remastered", 60);
@@ -31,7 +37,7 @@ public class GameController extends Controller {
         GameRepo repo = new GameRepo();
         JsonNode json = repo.GetGame();
         if (json == null){
-            return badRequest(badrequest.render("Expected JSON, but received NULL."));
+            return badRequest(badrequest.render("Bad Request","401","Expected JSON, but received NULL."));
         }
         return ok(json);
    }

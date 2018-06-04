@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
-// @SOURCE:C:/Users/ShiMapleLeaf/Documents/play-java/conf/routes
-// @DATE:Sun May 27 12:29:30 CEST 2018
+// @SOURCE:C:/Users/user/Documents/play-java/conf/routes
+// @DATE:Mon May 28 10:58:42 CEST 2018
 
 import play.api.mvc.Call
 
@@ -33,22 +33,28 @@ package controllers {
     }
 
   
+    // @LINE:31
+    def updateGame(): Call = {
+      
+      Call("PUT", _prefix + { _defaultPrefix } + "updategame")
+    }
+  
     // @LINE:23
     def getGame(): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "getgame")
     }
   
+    // @LINE:25
+    def addUser(): Call = {
+      
+      Call("GET", _prefix + { _defaultPrefix } + "adduser")
+    }
+  
     // @LINE:21
     def newGame(): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "addgame")
-    }
-  
-    // @LINE:25
-    def updateGame(): Call = {
-      
-      Call("PUT", _prefix + { _defaultPrefix } + "updategame")
     }
   
     // @LINE:19
@@ -112,6 +118,27 @@ package controllers {
     def message(): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "message")
+    }
+  
+  }
+
+  // @LINE:27
+  class ReverseAuthController(_prefix: => String) {
+    def _defaultPrefix: String = {
+      if (_prefix.endsWith("/")) "" else "/"
+    }
+
+  
+    // @LINE:27
+    def Authenticate(): Call = {
+      
+      Call("GET", _prefix + { _defaultPrefix } + "auth")
+    }
+  
+    // @LINE:29
+    def GetName(): Call = {
+      
+      Call("GET", _prefix + { _defaultPrefix } + "auth/name")
     }
   
   }

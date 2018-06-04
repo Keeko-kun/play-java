@@ -45,7 +45,7 @@ public class GameRepo {
         try{
             tx = session.beginTransaction();
             g = session.get(Game.class, 2L);
-            g.setName("Splatoon 2");
+            g.setName("Mario Kart");
             session.update(g);
             tx.commit();
         }

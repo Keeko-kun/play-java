@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
-// @SOURCE:C:/Users/ShiMapleLeaf/Documents/play-java/conf/routes
-// @DATE:Sun May 27 12:29:30 CEST 2018
+// @SOURCE:C:/Users/user/Documents/play-java/conf/routes
+// @DATE:Mon May 28 10:58:42 CEST 2018
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -39,6 +39,16 @@ package controllers.javascript {
     }
 
   
+    // @LINE:31
+    def updateGame: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.GameController.updateGame",
+      """
+        function() {
+          return _wA({method:"PUT", url:"""" + _prefix + { _defaultPrefix } + """" + "updategame"})
+        }
+      """
+    )
+  
     // @LINE:23
     def getGame: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.GameController.getGame",
@@ -49,22 +59,22 @@ package controllers.javascript {
       """
     )
   
+    // @LINE:25
+    def addUser: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.GameController.addUser",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "adduser"})
+        }
+      """
+    )
+  
     // @LINE:21
     def newGame: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.GameController.newGame",
       """
         function() {
           return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "addgame"})
-        }
-      """
-    )
-  
-    // @LINE:25
-    def updateGame: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.GameController.updateGame",
-      """
-        function() {
-          return _wA({method:"PUT", url:"""" + _prefix + { _defaultPrefix } + """" + "updategame"})
         }
       """
     )
@@ -155,6 +165,36 @@ package controllers.javascript {
       """
         function() {
           return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "message"})
+        }
+      """
+    )
+  
+  }
+
+  // @LINE:27
+  class ReverseAuthController(_prefix: => String) {
+
+    def _defaultPrefix: String = {
+      if (_prefix.endsWith("/")) "" else "/"
+    }
+
+  
+    // @LINE:27
+    def Authenticate: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.AuthController.Authenticate",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "auth"})
+        }
+      """
+    )
+  
+    // @LINE:29
+    def GetName: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.AuthController.GetName",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "auth/name"})
         }
       """
     )

@@ -22,4 +22,10 @@ POST /addgame    controllers.GameController.newGame
 
 GET /getgame    controllers.GameController.getGame
 
+GET /adduser    controllers.GameController.addUser
+
+GET /auth       controllers.AuthController.Authenticate
+
+GET /auth/name  controllers.AuthController.GetName
+
 PUT /updategame controllers.GameController.updateGame
