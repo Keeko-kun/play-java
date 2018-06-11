@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/ShiMapleLeaf/Documents/play-java/conf/routes
-// @DATE:Mon Jun 04 10:55:19 CEST 2018
+// @DATE:Mon Jun 11 09:46:24 CEST 2018
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -31,7 +31,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:19
+  // @LINE:21
   class ReverseGameController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -39,7 +39,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:31
+    // @LINE:33
     def updateGame: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.GameController.updateGame",
       """
@@ -49,7 +49,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:23
+    // @LINE:25
     def getGame: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.GameController.getGame",
       """
@@ -59,7 +59,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:25
+    // @LINE:27
     def addUser: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.GameController.addUser",
       """
@@ -69,7 +69,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:21
+    // @LINE:23
     def newGame: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.GameController.newGame",
       """
@@ -79,7 +79,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:19
+    // @LINE:21
     def gamejson: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.GameController.gamejson",
       """
@@ -111,46 +111,6 @@ package controllers.javascript {
   
   }
 
-  // @LINE:6
-  class ReverseHomeController(_prefix: => String) {
-
-    def _defaultPrefix: String = {
-      if (_prefix.endsWith("/")) "" else "/"
-    }
-
-  
-    // @LINE:17
-    def app: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.HomeController.app",
-      """
-        function() {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "app"})
-        }
-      """
-    )
-  
-    // @LINE:15
-    def cake: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.HomeController.cake",
-      """
-        function() {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "cake"})
-        }
-      """
-    )
-  
-    // @LINE:6
-    def index: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.HomeController.index",
-      """
-        function() {
-          return _wA({method:"GET", url:"""" + _prefix + """"})
-        }
-      """
-    )
-  
-  }
-
   // @LINE:10
   class ReverseAsyncController(_prefix: => String) {
 
@@ -171,7 +131,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:35
+  // @LINE:37
   class ReverseApplication(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -179,7 +139,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:35
+    // @LINE:37
     def javascriptRoutes: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Application.javascriptRoutes",
       """
@@ -191,7 +151,57 @@ package controllers.javascript {
   
   }
 
-  // @LINE:27
+  // @LINE:6
+  class ReverseIndexController(_prefix: => String) {
+
+    def _defaultPrefix: String = {
+      if (_prefix.endsWith("/")) "" else "/"
+    }
+
+  
+    // @LINE:17
+    def home: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.IndexController.home",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "home"})
+        }
+      """
+    )
+  
+    // @LINE:15
+    def cake: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.IndexController.cake",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "cake"})
+        }
+      """
+    )
+  
+    // @LINE:6
+    def index: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.IndexController.index",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + """"})
+        }
+      """
+    )
+  
+    // @LINE:19
+    def login: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.IndexController.login",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "login"})
+        }
+      """
+    )
+  
+  }
+
+  // @LINE:29
   class ReverseAuthController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -199,7 +209,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:27
+    // @LINE:29
     def Authenticate: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.AuthController.Authenticate",
       """
@@ -209,7 +219,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:33
+    // @LINE:35
     def GetToken: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.AuthController.GetToken",
       """
@@ -219,7 +229,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:29
+    // @LINE:31
     def GetName: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.AuthController.GetName",
       """

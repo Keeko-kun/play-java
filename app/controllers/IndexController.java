@@ -15,15 +15,21 @@ import services.HibernateUtil;
 import models.*;
 
 import play.libs.Json;
+import play.data.Form;
+import play.data.FormFactory;
 
-public class HomeController extends Controller {
+public class IndexController extends Controller {
 
     public Result index() {
-        return ok(index.render("Your new application is dead."));
+        return ok(home.render());
     }
 
-    public Result app() {
-        return  ok(app.render());
+    public Result home() {
+        return  ok(home.render());
+    }
+
+    public Result login() {
+        return ok(login.render());
     }
 
     public Result cake(){

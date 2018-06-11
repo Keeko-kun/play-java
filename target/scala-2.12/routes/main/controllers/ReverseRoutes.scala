@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/ShiMapleLeaf/Documents/play-java/conf/routes
-// @DATE:Mon Jun 04 10:55:19 CEST 2018
+// @DATE:Mon Jun 11 09:46:24 CEST 2018
 
 import play.api.mvc.Call
 
@@ -26,38 +26,38 @@ package controllers {
   
   }
 
-  // @LINE:19
+  // @LINE:21
   class ReverseGameController(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:31
+    // @LINE:33
     def updateGame(): Call = {
       
       Call("PUT", _prefix + { _defaultPrefix } + "updategame")
     }
   
-    // @LINE:23
+    // @LINE:25
     def getGame(): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "getgame")
     }
   
-    // @LINE:25
+    // @LINE:27
     def addUser(): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "adduser")
     }
   
-    // @LINE:21
+    // @LINE:23
     def newGame(): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "addgame")
     }
   
-    // @LINE:19
+    // @LINE:21
     def gamejson(): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "gamejson")
@@ -80,33 +80,6 @@ package controllers {
   
   }
 
-  // @LINE:6
-  class ReverseHomeController(_prefix: => String) {
-    def _defaultPrefix: String = {
-      if (_prefix.endsWith("/")) "" else "/"
-    }
-
-  
-    // @LINE:17
-    def app(): Call = {
-      
-      Call("GET", _prefix + { _defaultPrefix } + "app")
-    }
-  
-    // @LINE:15
-    def cake(): Call = {
-      
-      Call("GET", _prefix + { _defaultPrefix } + "cake")
-    }
-  
-    // @LINE:6
-    def index(): Call = {
-      
-      Call("GET", _prefix)
-    }
-  
-  }
-
   // @LINE:10
   class ReverseAsyncController(_prefix: => String) {
     def _defaultPrefix: String = {
@@ -122,14 +95,14 @@ package controllers {
   
   }
 
-  // @LINE:35
+  // @LINE:37
   class ReverseApplication(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:35
+    // @LINE:37
     def javascriptRoutes(): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "javascriptRoutes")
@@ -137,26 +110,59 @@ package controllers {
   
   }
 
-  // @LINE:27
+  // @LINE:6
+  class ReverseIndexController(_prefix: => String) {
+    def _defaultPrefix: String = {
+      if (_prefix.endsWith("/")) "" else "/"
+    }
+
+  
+    // @LINE:17
+    def home(): Call = {
+      
+      Call("GET", _prefix + { _defaultPrefix } + "home")
+    }
+  
+    // @LINE:15
+    def cake(): Call = {
+      
+      Call("GET", _prefix + { _defaultPrefix } + "cake")
+    }
+  
+    // @LINE:6
+    def index(): Call = {
+      
+      Call("GET", _prefix)
+    }
+  
+    // @LINE:19
+    def login(): Call = {
+      
+      Call("GET", _prefix + { _defaultPrefix } + "login")
+    }
+  
+  }
+
+  // @LINE:29
   class ReverseAuthController(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:27
+    // @LINE:29
     def Authenticate(): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "auth")
     }
   
-    // @LINE:33
+    // @LINE:35
     def GetToken(name:String, pass:String): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "auth/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[String]].unbind("name", name)) + "/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[String]].unbind("pass", pass)))
     }
   
-    // @LINE:29
+    // @LINE:31
     def GetName(): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "auth/name")

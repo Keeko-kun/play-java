@@ -3080,3 +3080,11 @@ select.stack {
     color: #fbfbfb;
     font-weight: bold;
 }
+.mainHeader input{
+    max-width: 420px;
+    color: #111;
+}
+
+input[type="submit"]{
+  color: #fbfbfb;
+}
