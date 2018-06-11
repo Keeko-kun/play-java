@@ -29,3 +29,7 @@ GET /auth       controllers.AuthController.Authenticate
 GET /auth/name  controllers.AuthController.GetName
 
 PUT /updategame controllers.GameController.updateGame
+
+POST /auth/:name/:pass      controllers.AuthController.GetToken(name: String, pass: String)
+
+GET /javascriptRoutes   controllers.Application.javascriptRoutes

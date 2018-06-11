@@ -16,14 +16,14 @@ public class UserRepo {
 
     }
 
-    public String Login(){
+    public String Login(String username, String password){
         Session session = HibernateUtil.factory().openSession();
         User user;
 
         try {
             Query q = session.getNamedQuery("User.auth");
-            q.setParameter("username", "admin");
-            q.setParameter("password", "admin");
+            q.setParameter("username", username);
+            q.setParameter("password", password);
             user = (User) q.getSingleResult();
         }
         catch (Exception e) {

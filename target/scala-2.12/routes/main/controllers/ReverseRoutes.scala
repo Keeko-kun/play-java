@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
-// @SOURCE:C:/Users/user/Documents/play-java/conf/routes
-// @DATE:Mon May 28 10:58:42 CEST 2018
+// @SOURCE:C:/Users/ShiMapleLeaf/Documents/play-java/conf/routes
+// @DATE:Mon Jun 04 10:55:19 CEST 2018
 
 import play.api.mvc.Call
 
@@ -122,6 +122,21 @@ package controllers {
   
   }
 
+  // @LINE:35
+  class ReverseApplication(_prefix: => String) {
+    def _defaultPrefix: String = {
+      if (_prefix.endsWith("/")) "" else "/"
+    }
+
+  
+    // @LINE:35
+    def javascriptRoutes(): Call = {
+      
+      Call("GET", _prefix + { _defaultPrefix } + "javascriptRoutes")
+    }
+  
+  }
+
   // @LINE:27
   class ReverseAuthController(_prefix: => String) {
     def _defaultPrefix: String = {
@@ -133,6 +148,12 @@ package controllers {
     def Authenticate(): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "auth")
+    }
+  
+    // @LINE:33
+    def GetToken(name:String, pass:String): Call = {
+      
+      Call("POST", _prefix + { _defaultPrefix } + "auth/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[String]].unbind("name", name)) + "/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[String]].unbind("pass", pass)))
     }
   
     // @LINE:29

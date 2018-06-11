@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
-// @SOURCE:C:/Users/user/Documents/play-java/conf/routes
-// @DATE:Mon May 28 10:58:42 CEST 2018
+// @SOURCE:C:/Users/ShiMapleLeaf/Documents/play-java/conf/routes
+// @DATE:Mon Jun 04 10:55:19 CEST 2018
 
 package router
 
@@ -26,6 +26,8 @@ class Routes(
   GameController_4: controllers.GameController,
   // @LINE:27
   AuthController_1: controllers.AuthController,
+  // @LINE:35
+  Application_6: controllers.Application,
   val prefix: String
 ) extends GeneratedRouter {
 
@@ -42,12 +44,14 @@ class Routes(
     // @LINE:19
     GameController_4: controllers.GameController,
     // @LINE:27
-    AuthController_1: controllers.AuthController
-  ) = this(errorHandler, HomeController_2, CountController_0, AsyncController_3, Assets_5, GameController_4, AuthController_1, "/")
+    AuthController_1: controllers.AuthController,
+    // @LINE:35
+    Application_6: controllers.Application
+  ) = this(errorHandler, HomeController_2, CountController_0, AsyncController_3, Assets_5, GameController_4, AuthController_1, Application_6, "/")
 
   def withPrefix(prefix: String): Routes = {
     router.RoutesPrefix.setPrefix(prefix)
-    new Routes(errorHandler, HomeController_2, CountController_0, AsyncController_3, Assets_5, GameController_4, AuthController_1, prefix)
+    new Routes(errorHandler, HomeController_2, CountController_0, AsyncController_3, Assets_5, GameController_4, AuthController_1, Application_6, prefix)
   }
 
   private[this] val defaultPrefix: String = {
@@ -68,6 +72,8 @@ class Routes(
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """auth""", """controllers.AuthController.Authenticate"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """auth/name""", """controllers.AuthController.GetName"""),
     ("""PUT""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """updategame""", """controllers.GameController.updateGame"""),
+    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """auth/""" + "$" + """name<[^/]+>/""" + "$" + """pass<[^/]+>""", """controllers.AuthController.GetToken(name:String, pass:String)"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """javascriptRoutes""", """controllers.Application.javascriptRoutes"""),
     Nil
   ).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
     case r @ (_,_,_) => s :+ r.asInstanceOf[(String,String,String)]
@@ -309,6 +315,42 @@ class Routes(
     )
   )
 
+  // @LINE:33
+  private[this] lazy val controllers_AuthController_GetToken13_route = Route("POST",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("auth/"), DynamicPart("name", """[^/]+""",true), StaticPart("/"), DynamicPart("pass", """[^/]+""",true)))
+  )
+  private[this] lazy val controllers_AuthController_GetToken13_invoker = createInvoker(
+    AuthController_1.GetToken(fakeValue[String], fakeValue[String]),
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.AuthController",
+      "GetToken",
+      Seq(classOf[String], classOf[String]),
+      "POST",
+      this.prefix + """auth/""" + "$" + """name<[^/]+>/""" + "$" + """pass<[^/]+>""",
+      """""",
+      Seq()
+    )
+  )
+
+  // @LINE:35
+  private[this] lazy val controllers_Application_javascriptRoutes14_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("javascriptRoutes")))
+  )
+  private[this] lazy val controllers_Application_javascriptRoutes14_invoker = createInvoker(
+    Application_6.javascriptRoutes,
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.Application",
+      "javascriptRoutes",
+      Nil,
+      "GET",
+      this.prefix + """javascriptRoutes""",
+      """""",
+      Seq()
+    )
+  )
+
 
   def routes: PartialFunction[RequestHeader, Handler] = {
   
@@ -388,6 +430,18 @@ class Routes(
     case controllers_GameController_updateGame12_route(params@_) =>
       call { 
         controllers_GameController_updateGame12_invoker.call(GameController_4.updateGame)
+      }
+  
+    // @LINE:33
+    case controllers_AuthController_GetToken13_route(params@_) =>
+      call(params.fromPath[String]("name", None), params.fromPath[String]("pass", None)) { (name, pass) =>
+        controllers_AuthController_GetToken13_invoker.call(AuthController_1.GetToken(name, pass))
+      }
+  
+    // @LINE:35
+    case controllers_Application_javascriptRoutes14_route(params@_) =>
+      call { 
+        controllers_Application_javascriptRoutes14_invoker.call(Application_6.javascriptRoutes)
       }
   }
 }

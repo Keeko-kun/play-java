@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
-// @SOURCE:C:/Users/user/Documents/play-java/conf/routes
-// @DATE:Mon May 28 10:58:42 CEST 2018
+// @SOURCE:C:/Users/ShiMapleLeaf/Documents/play-java/conf/routes
+// @DATE:Mon Jun 04 10:55:19 CEST 2018
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -171,6 +171,26 @@ package controllers.javascript {
   
   }
 
+  // @LINE:35
+  class ReverseApplication(_prefix: => String) {
+
+    def _defaultPrefix: String = {
+      if (_prefix.endsWith("/")) "" else "/"
+    }
+
+  
+    // @LINE:35
+    def javascriptRoutes: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.Application.javascriptRoutes",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "javascriptRoutes"})
+        }
+      """
+    )
+  
+  }
+
   // @LINE:27
   class ReverseAuthController(_prefix: => String) {
 
@@ -185,6 +205,16 @@ package controllers.javascript {
       """
         function() {
           return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "auth"})
+        }
+      """
+    )
+  
+    // @LINE:33
+    def GetToken: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.AuthController.GetToken",
+      """
+        function(name0,pass1) {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "auth/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[String]].javascriptUnbind + """)("name", name0)) + "/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[String]].javascriptUnbind + """)("pass", pass1))})
         }
       """
     )
