@@ -35,3 +35,5 @@ PUT /updategame controllers.GameController.updateGame
 POST /auth/:name/:pass      controllers.AuthController.GetToken(name: String, pass: String)
 
 GET /javascriptRoutes   controllers.Application.javascriptRoutes
+
+POST /login     controllers.AuthController.login

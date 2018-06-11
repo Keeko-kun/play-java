@@ -24,6 +24,8 @@ function getCookie(cname) {
 async function getToken(username, password){
     var token = await JsRoutes.controllers.AuthController.GetToken(username, password).ajax({});
 
+    console.log(token);
+
     if (token == ""){
         return;
     }
@@ -31,3 +33,4 @@ async function getToken(username, password){
         saveCookie("token", token, 1);
     }
 }
+

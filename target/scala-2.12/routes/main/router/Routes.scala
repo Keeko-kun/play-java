@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/ShiMapleLeaf/Documents/play-java/conf/routes
-// @DATE:Mon Jun 11 09:46:24 CEST 2018
+// @DATE:Mon Jun 11 10:43:05 CEST 2018
 
 package router
 
@@ -75,6 +75,7 @@ class Routes(
     ("""PUT""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """updategame""", """controllers.GameController.updateGame"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """auth/""" + "$" + """name<[^/]+>/""" + "$" + """pass<[^/]+>""", """controllers.AuthController.GetToken(name:String, pass:String)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """javascriptRoutes""", """controllers.Application.javascriptRoutes"""),
+    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """login""", """controllers.AuthController.login"""),
     Nil
   ).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
     case r @ (_,_,_) => s :+ r.asInstanceOf[(String,String,String)]
@@ -370,6 +371,24 @@ class Routes(
     )
   )
 
+  // @LINE:39
+  private[this] lazy val controllers_AuthController_login16_route = Route("POST",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("login")))
+  )
+  private[this] lazy val controllers_AuthController_login16_invoker = createInvoker(
+    AuthController_1.login,
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.AuthController",
+      "login",
+      Nil,
+      "POST",
+      this.prefix + """login""",
+      """""",
+      Seq()
+    )
+  )
+
 
   def routes: PartialFunction[RequestHeader, Handler] = {
   
@@ -467,6 +486,12 @@ class Routes(
     case controllers_Application_javascriptRoutes15_route(params@_) =>
       call { 
         controllers_Application_javascriptRoutes15_invoker.call(Application_6.javascriptRoutes)
+      }
+  
+    // @LINE:39
+    case controllers_AuthController_login16_route(params@_) =>
+      call { 
+        controllers_AuthController_login16_invoker.call(AuthController_1.login)
       }
   }
 }
