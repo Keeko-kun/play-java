@@ -196,7 +196,7 @@
         <entry file="file://$PROJECT_DIR$/app/controllers/AuthController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="525">
-              <caret line="58" column="86" selection-start-line="58" selection-start-column="86" selection-end-line="58" selection-end-column="86" />
+              <caret line="67" column="26" selection-start-line="67" selection-start-column="26" selection-end-line="67" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -354,7 +354,7 @@
     <packageJsonPaths />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-150" />
     <option name="y" value="-19" />
     <option name="width" value="1936" />
@@ -578,8 +578,7 @@
     <option name="totallyTimeSpent" value="30251000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="sbt" order="4" />
@@ -941,7 +940,7 @@
     <entry file="file://$PROJECT_DIR$/app/controllers/AuthController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="525">
-          <caret line="58" column="86" selection-start-line="58" selection-start-column="86" selection-end-line="58" selection-end-column="86" />
+          <caret line="67" column="26" selection-start-line="67" selection-start-column="26" selection-end-line="67" selection-end-column="26" />
         </state>
       </provider>
     </entry>

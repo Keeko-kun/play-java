@@ -42,7 +42,7 @@ public class AuthController extends Controller {
             return redirect("/home");
         }
         else {
-            return ok("");
+            return redirect("/login");
         }
     }
 
@@ -57,16 +57,15 @@ public class AuthController extends Controller {
         }
     }
 
-    public Result GetName(){
+    public Result GetName(String token){
         UserRepo repo = new UserRepo();
-        String token = repo.Login("bart", "simpson");
         String username = repo.GetUsernameFromToken(token);
 
         if (username != null){
-            return ok(badrequest.render("Succes", "0", username));
+            return ok(username);
         }
         else{
-            return ok(badrequest.render("Invalid Token", "401", "The token was invalid."));
+            return ok("");
         }
     }
 

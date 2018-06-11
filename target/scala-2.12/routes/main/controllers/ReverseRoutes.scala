@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/ShiMapleLeaf/Documents/play-java/conf/routes
-// @DATE:Mon Jun 11 10:43:05 CEST 2018
+// @DATE:Mon Jun 11 11:26:18 CEST 2018
 
 import play.api.mvc.Call
 
@@ -150,6 +150,12 @@ package controllers {
     }
 
   
+    // @LINE:31
+    def GetName(token:String): Call = {
+      
+      Call("POST", _prefix + { _defaultPrefix } + "name/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[String]].unbind("token", token)))
+    }
+  
     // @LINE:29
     def Authenticate(): Call = {
       
@@ -166,12 +172,6 @@ package controllers {
     def login(): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "login")
-    }
-  
-    // @LINE:31
-    def GetName(): Call = {
-      
-      Call("GET", _prefix + { _defaultPrefix } + "auth/name")
     }
   
   }

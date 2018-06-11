@@ -21,11 +21,11 @@
         </nav>
         <header class="mainHeader">
             <div class="content">
-                <form action="@routes.AuthController.login()" method="post">
+                  @helper.form(action = routes.AuthController.login) {
                     <p>Username:</p> <input type="text" name="username"></br></br>
                     <p>Password:</p> <input type="password" name="password"></br></br>
                     <input type="submit" value="Submit">
-                  </form>
+                 }
             </div>
 
         </header>

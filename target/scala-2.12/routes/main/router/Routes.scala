@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/ShiMapleLeaf/Documents/play-java/conf/routes
-// @DATE:Mon Jun 11 10:43:05 CEST 2018
+// @DATE:Mon Jun 11 11:26:18 CEST 2018
 
 package router
 
@@ -71,7 +71,7 @@ class Routes(
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """getgame""", """controllers.GameController.getGame"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """adduser""", """controllers.GameController.addUser"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """auth""", """controllers.AuthController.Authenticate"""),
-    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """auth/name""", """controllers.AuthController.GetName"""),
+    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """name/""" + "$" + """token<[^/]+>""", """controllers.AuthController.GetName(token:String)"""),
     ("""PUT""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """updategame""", """controllers.GameController.updateGame"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """auth/""" + "$" + """name<[^/]+>/""" + "$" + """pass<[^/]+>""", """controllers.AuthController.GetToken(name:String, pass:String)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """javascriptRoutes""", """controllers.Application.javascriptRoutes"""),
@@ -300,18 +300,18 @@ class Routes(
   )
 
   // @LINE:31
-  private[this] lazy val controllers_AuthController_GetName12_route = Route("GET",
-    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("auth/name")))
+  private[this] lazy val controllers_AuthController_GetName12_route = Route("POST",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("name/"), DynamicPart("token", """[^/]+""",true)))
   )
   private[this] lazy val controllers_AuthController_GetName12_invoker = createInvoker(
-    AuthController_1.GetName,
+    AuthController_1.GetName(fakeValue[String]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.AuthController",
       "GetName",
-      Nil,
-      "GET",
-      this.prefix + """auth/name""",
+      Seq(classOf[String]),
+      "POST",
+      this.prefix + """name/""" + "$" + """token<[^/]+>""",
       """""",
       Seq()
     )
@@ -466,8 +466,8 @@ class Routes(
   
     // @LINE:31
     case controllers_AuthController_GetName12_route(params@_) =>
-      call { 
-        controllers_AuthController_GetName12_invoker.call(AuthController_1.GetName)
+      call(params.fromPath[String]("token", None)) { (token) =>
+        controllers_AuthController_GetName12_invoker.call(AuthController_1.GetName(token))
       }
   
     // @LINE:33

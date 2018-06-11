@@ -24,7 +24,8 @@ public class Application extends Controller{
         response().setContentType("text/javascript");
         return ok(
             JavaScriptReverseRouter.create("JsRoutes",
-                routes.javascript.AuthController.GetToken()
+                routes.javascript.AuthController.GetToken(),
+                routes.javascript.AuthController.GetName()
             )
         );
     }

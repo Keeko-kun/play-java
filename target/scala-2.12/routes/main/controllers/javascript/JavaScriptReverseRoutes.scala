@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/ShiMapleLeaf/Documents/play-java/conf/routes
-// @DATE:Mon Jun 11 10:43:05 CEST 2018
+// @DATE:Mon Jun 11 11:26:18 CEST 2018
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -209,6 +209,16 @@ package controllers.javascript {
     }
 
   
+    // @LINE:31
+    def GetName: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.AuthController.GetName",
+      """
+        function(token0) {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "name/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[String]].javascriptUnbind + """)("token", token0))})
+        }
+      """
+    )
+  
     // @LINE:29
     def Authenticate: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.AuthController.Authenticate",
@@ -235,16 +245,6 @@ package controllers.javascript {
       """
         function() {
           return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "login"})
-        }
-      """
-    )
-  
-    // @LINE:31
-    def GetName: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.AuthController.GetName",
-      """
-        function() {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "auth/name"})
         }
       """
     )

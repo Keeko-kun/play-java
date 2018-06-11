@@ -28,7 +28,7 @@ GET /adduser    controllers.GameController.addUser
 
 GET /auth       controllers.AuthController.Authenticate
 
-GET /auth/name  controllers.AuthController.GetName
+POST /name/:token      controllers.AuthController.GetName(token: String)
 
 PUT /updategame controllers.GameController.updateGame
 
