@@ -27,11 +27,13 @@ async function getToken(username, password){
     console.log(token);
 
     if (token == ""){
-        return;
+
     }
     else {
         saveCookie("token", token, 1);
     }
+
+    return token;
 }
 
 
