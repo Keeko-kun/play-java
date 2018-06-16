@@ -1,6 +1,10 @@
 package models;
 
 import javax.persistence.*;
+import java.util.*;
+import java.util.Arrays;
+import java.util.List;
+import com.fasterxml.jackson.annotation.*;
 
 @NamedQueries(
         @NamedQuery(
@@ -28,6 +32,9 @@ public class User {
     @Column(name = "isAdmin")
     private boolean isAdmin;
 
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "user")
+    @JsonIgnore
+    private List<Review> reviews;
 
     public Long getId() {
         return id;
@@ -53,19 +60,31 @@ public class User {
         this.password = password;
     }
 
-    public boolean getIsAdmin() {
+    public boolean isAdmin() {
         return isAdmin;
     }
 
-    public void setIsAdmin(boolean isAdmin) {
-        this.isAdmin = isAdmin;
+    public void setAdmin(boolean admin) {
+        isAdmin = admin;
     }
+
+    public List<Review> getReviews() {
+        return reviews;
+    }
+
+    public void setReviews(List<Review> reviews) {
+        this.reviews = reviews;
+    }
+
+
 
     public User (){ }
 
-    public User(String username, String password, boolean isAdmin) {
+    public User(Long id, String username, String password, boolean isAdmin, List<Review> reviews) {
+        this.id = id;
         this.username = username;
         this.password = password;
         this.isAdmin = isAdmin;
+        this.reviews = reviews;
     }
 }

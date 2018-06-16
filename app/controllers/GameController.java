@@ -10,42 +10,31 @@ import models.*;
 
 import repos.*;
 
+import java.util.*;
+import java.util.Arrays;
+import java.util.List;
+
 import play.libs.Json;
 import com.fasterxml.jackson.databind.JsonNode;
 
 public class GameController extends Controller {
 
-   public Result gamejson(){
-       Game game = new Game("Dark Souls: Remastered", 60);
-
-       return ok(Json.toJson(game));
-   }
-
-   public Result addUser(){
-        UserRepo repo = new UserRepo();
-        JsonNode json = repo.AddUser();
-        return ok(json);
-   }
-
-   public Result newGame(){
+    public Result GetAllGames(){
         GameRepo repo = new GameRepo();
-        JsonNode json = repo.AddGame("Dark Souls: Remastered", 60);
-        return ok(json);
-   }
+        List<Game> games = repo.GetAllGames();
+        return ok(Json.toJson(games));
+    }
 
-   public Result getGame(){
+    public Result AddGame(String name, int price, String url){
         GameRepo repo = new GameRepo();
-        JsonNode json = repo.GetGame();
-        if (json == null){
-            return badRequest(badrequest.render("Bad Request","401","Expected JSON, but received NULL."));
-        }
-        return ok(json);
-   }
+        repo.AddGame(name, price, url);
+        return ok("did it reddit");
+    }
 
-   public Result updateGame(){
-    GameRepo repo = new GameRepo();
-    JsonNode json = repo.UpdateGame();
-    return ok(json);
-   }
+    public Result FindGame(int id){
+        GameRepo repo = new GameRepo();
+        Game game = repo.FindGame(id);
+        return ok(Json.toJson(game));
+    }
 
 }

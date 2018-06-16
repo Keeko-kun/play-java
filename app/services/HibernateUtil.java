@@ -15,11 +15,13 @@ public class HibernateUtil {
             Thread.currentThread().setContextClassLoader(Cake.class.getClassLoader());
             Thread.currentThread().setContextClassLoader(Game.class.getClassLoader());
             Thread.currentThread().setContextClassLoader(User.class.getClassLoader());
+            Thread.currentThread().setContextClassLoader(Review.class.getClassLoader());
             sessionFactory = new Configuration()
                     .configure()
                     .addAnnotatedClass(Cake.class)
                     .addAnnotatedClass(Game.class)
                     .addAnnotatedClass(User.class)
+                    .addAnnotatedClass(Review.class)
                     .buildSessionFactory();
         } catch (Throwable ex) {
             // Log the exception.

@@ -57,8 +57,8 @@ Seq[Any](format.raw/*6.1*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Wed Jun 13 11:12:45 CEST 2018
-                  SOURCE: C:/Users/user/Documents/play-java/app/views/index.scala.html
+                  DATE: Sat Jun 16 10:45:50 CEST 2018
+                  SOURCE: C:/Users/ShiMapleLeaf/Documents/play-java/app/views/index.scala.html
                   HASH: 9040cdc6391df1f5c9d9a05a763073d6fd21d0f1
                   MATRIX: 1037->95|1148->113|1176->308|1204->310|1236->333|1276->335|1309->464|1341->470|1394->502|1427->505
                   LINES: 31->5|36->6|37->11|38->12|38->12|38->12|40->17|41->18|41->18|43->20

@@ -81,4 +81,10 @@ public class AuthController extends Controller {
         }
     }
 
+    public Result VerifyAdmin(String token){
+        boolean isAdmin = JwtUtil.VerifyAdmin(token);
+
+        return ok(Json.toJson(isAdmin));
+    }
+
 }

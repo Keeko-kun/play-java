@@ -16,7 +16,6 @@ public class JwtUtil{
             return JWT.create()
                     .withIssuer("auth0")
                     .withClaim("username", username)
-                    .withClaim("password", password)
                     .withClaim("isAdmin", isAdmin)
                     .sign(Algorithm.HMAC256(secret));
         }
@@ -39,6 +38,23 @@ public class JwtUtil{
             return null;
         } catch (SignatureVerificationException e){
             return null;
+        }
+    }
+
+    public static boolean VerifyAdmin(String token)
+    {
+        try {
+            JWTVerifier verifier = JWT.require(Algorithm.HMAC256(secret))
+                    .withIssuer("auth0")
+                    .build();
+            DecodedJWT jwt = verifier.verify(token);
+            return jwt.getClaim("isAdmin").asBoolean();
+        } catch (JWTDecodeException exception){
+            return false;
+        } catch (UnsupportedEncodingException e) {
+            return false;
+        } catch (SignatureVerificationException e){
+            return false;
         }
     }
 

@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
-// @SOURCE:C:/Users/user/Documents/play-java/conf/routes
-// @DATE:Wed Jun 13 11:12:44 CEST 2018
+// @SOURCE:C:/Users/ShiMapleLeaf/Documents/play-java/conf/routes
+// @DATE:Sat Jun 16 17:06:19 CEST 2018
 
 import play.api.mvc.Call
 
@@ -26,41 +26,29 @@ package controllers {
   
   }
 
-  // @LINE:21
+  // @LINE:35
   class ReverseGameController(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:33
-    def updateGame(): Call = {
+    // @LINE:43
+    def FindGame(id:Int): Call = {
       
-      Call("PUT", _prefix + { _defaultPrefix } + "updategame")
+      Call("POST", _prefix + { _defaultPrefix } + "game/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Int]].unbind("id", id)))
     }
   
-    // @LINE:25
-    def getGame(): Call = {
+    // @LINE:39
+    def AddGame(name:String, price:Int, url:String): Call = {
       
-      Call("GET", _prefix + { _defaultPrefix } + "getgame")
+      Call("POST", _prefix + { _defaultPrefix } + "games/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[String]].unbind("name", name)) + "/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Int]].unbind("price", price)) + "/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[String]].unbind("url", url)))
     }
   
-    // @LINE:27
-    def addUser(): Call = {
+    // @LINE:35
+    def GetAllGames(): Call = {
       
-      Call("GET", _prefix + { _defaultPrefix } + "adduser")
-    }
-  
-    // @LINE:23
-    def newGame(): Call = {
-      
-      Call("POST", _prefix + { _defaultPrefix } + "addgame")
-    }
-  
-    // @LINE:21
-    def gamejson(): Call = {
-      
-      Call("GET", _prefix + { _defaultPrefix } + "gamejson")
+      Call("GET", _prefix + { _defaultPrefix } + "game")
     }
   
   }
@@ -80,6 +68,21 @@ package controllers {
   
   }
 
+  // @LINE:31
+  class ReverseReviewController(_prefix: => String) {
+    def _defaultPrefix: String = {
+      if (_prefix.endsWith("/")) "" else "/"
+    }
+
+  
+    // @LINE:31
+    def GetTopSixReviews(): Call = {
+      
+      Call("GET", _prefix + { _defaultPrefix } + "reviews/topsix")
+    }
+  
+  }
+
   // @LINE:10
   class ReverseAsyncController(_prefix: => String) {
     def _defaultPrefix: String = {
@@ -95,14 +98,14 @@ package controllers {
   
   }
 
-  // @LINE:37
+  // @LINE:27
   class ReverseApplication(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:37
+    // @LINE:27
     def javascriptRoutes(): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "javascriptRoutes")
@@ -117,6 +120,12 @@ package controllers {
     }
 
   
+    // @LINE:33
+    def game(): Call = {
+      
+      Call("GET", _prefix + { _defaultPrefix } + "games")
+    }
+  
     // @LINE:17
     def home(): Call = {
       
@@ -126,7 +135,13 @@ package controllers {
     // @LINE:15
     def cake(): Call = {
       
-      Call("GET", _prefix + { _defaultPrefix } + "cake")
+      Call("POST", _prefix + { _defaultPrefix } + "cake")
+    }
+  
+    // @LINE:41
+    def gamePage(id:Int): Call = {
+      
+      Call("GET", _prefix + { _defaultPrefix } + "game/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Int]].unbind("id", id)))
     }
   
     // @LINE:6
@@ -143,32 +158,38 @@ package controllers {
   
   }
 
-  // @LINE:29
+  // @LINE:21
   class ReverseAuthController(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:31
-    def GetName(token:String): Call = {
-      
-      Call("POST", _prefix + { _defaultPrefix } + "name/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[String]].unbind("token", token)))
-    }
-  
-    // @LINE:29
-    def Authenticate(): Call = {
-      
-      Call("GET", _prefix + { _defaultPrefix } + "auth")
-    }
-  
-    // @LINE:35
+    // @LINE:25
     def GetToken(name:String, pass:String): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "auth/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[String]].unbind("name", name)) + "/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[String]].unbind("pass", pass)))
     }
   
-    // @LINE:39
+    // @LINE:23
+    def GetName(token:String): Call = {
+      
+      Call("POST", _prefix + { _defaultPrefix } + "name/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[String]].unbind("token", token)))
+    }
+  
+    // @LINE:37
+    def VerifyAdmin(token:String): Call = {
+      
+      Call("POST", _prefix + { _defaultPrefix } + "games/verify/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[String]].unbind("token", token)))
+    }
+  
+    // @LINE:21
+    def Authenticate(): Call = {
+      
+      Call("GET", _prefix + { _defaultPrefix } + "auth")
+    }
+  
+    // @LINE:29
     def login(): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "login")

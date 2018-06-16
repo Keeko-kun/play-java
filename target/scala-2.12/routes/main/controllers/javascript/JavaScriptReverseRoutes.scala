@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
-// @SOURCE:C:/Users/user/Documents/play-java/conf/routes
-// @DATE:Wed Jun 13 11:12:44 CEST 2018
+// @SOURCE:C:/Users/ShiMapleLeaf/Documents/play-java/conf/routes
+// @DATE:Sat Jun 16 17:06:19 CEST 2018
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -31,7 +31,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:21
+  // @LINE:35
   class ReverseGameController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -39,52 +39,32 @@ package controllers.javascript {
     }
 
   
-    // @LINE:33
-    def updateGame: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.GameController.updateGame",
+    // @LINE:43
+    def FindGame: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.GameController.FindGame",
       """
-        function() {
-          return _wA({method:"PUT", url:"""" + _prefix + { _defaultPrefix } + """" + "updategame"})
+        function(id0) {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "game/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Int]].javascriptUnbind + """)("id", id0))})
         }
       """
     )
   
-    // @LINE:25
-    def getGame: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.GameController.getGame",
+    // @LINE:39
+    def AddGame: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.GameController.AddGame",
       """
-        function() {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "getgame"})
+        function(name0,price1,url2) {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "games/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[String]].javascriptUnbind + """)("name", name0)) + "/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Int]].javascriptUnbind + """)("price", price1)) + "/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[String]].javascriptUnbind + """)("url", url2))})
         }
       """
     )
   
-    // @LINE:27
-    def addUser: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.GameController.addUser",
+    // @LINE:35
+    def GetAllGames: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.GameController.GetAllGames",
       """
         function() {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "adduser"})
-        }
-      """
-    )
-  
-    // @LINE:23
-    def newGame: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.GameController.newGame",
-      """
-        function() {
-          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "addgame"})
-        }
-      """
-    )
-  
-    // @LINE:21
-    def gamejson: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.GameController.gamejson",
-      """
-        function() {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "gamejson"})
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "game"})
         }
       """
     )
@@ -111,6 +91,26 @@ package controllers.javascript {
   
   }
 
+  // @LINE:31
+  class ReverseReviewController(_prefix: => String) {
+
+    def _defaultPrefix: String = {
+      if (_prefix.endsWith("/")) "" else "/"
+    }
+
+  
+    // @LINE:31
+    def GetTopSixReviews: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.ReviewController.GetTopSixReviews",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "reviews/topsix"})
+        }
+      """
+    )
+  
+  }
+
   // @LINE:10
   class ReverseAsyncController(_prefix: => String) {
 
@@ -131,7 +131,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:37
+  // @LINE:27
   class ReverseApplication(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -139,7 +139,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:37
+    // @LINE:27
     def javascriptRoutes: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Application.javascriptRoutes",
       """
@@ -159,6 +159,16 @@ package controllers.javascript {
     }
 
   
+    // @LINE:33
+    def game: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.IndexController.game",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "games"})
+        }
+      """
+    )
+  
     // @LINE:17
     def home: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.IndexController.home",
@@ -174,7 +184,17 @@ package controllers.javascript {
       "controllers.IndexController.cake",
       """
         function() {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "cake"})
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "cake"})
+        }
+      """
+    )
+  
+    // @LINE:41
+    def gamePage: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.IndexController.gamePage",
+      """
+        function(id0) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "game/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Int]].javascriptUnbind + """)("id", id0))})
         }
       """
     )
@@ -201,7 +221,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:29
+  // @LINE:21
   class ReverseAuthController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -209,27 +229,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:31
-    def GetName: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.AuthController.GetName",
-      """
-        function(token0) {
-          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "name/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[String]].javascriptUnbind + """)("token", token0))})
-        }
-      """
-    )
-  
-    // @LINE:29
-    def Authenticate: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.AuthController.Authenticate",
-      """
-        function() {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "auth"})
-        }
-      """
-    )
-  
-    // @LINE:35
+    // @LINE:25
     def GetToken: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.AuthController.GetToken",
       """
@@ -239,7 +239,37 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:39
+    // @LINE:23
+    def GetName: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.AuthController.GetName",
+      """
+        function(token0) {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "name/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[String]].javascriptUnbind + """)("token", token0))})
+        }
+      """
+    )
+  
+    // @LINE:37
+    def VerifyAdmin: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.AuthController.VerifyAdmin",
+      """
+        function(token0) {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "games/verify/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[String]].javascriptUnbind + """)("token", token0))})
+        }
+      """
+    )
+  
+    // @LINE:21
+    def Authenticate: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.AuthController.Authenticate",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "auth"})
+        }
+      """
+    )
+  
+    // @LINE:29
     def login: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.AuthController.login",
       """

@@ -14,6 +14,8 @@ import services.HibernateUtil;
 
 import models.*;
 
+import repos.*;
+
 import play.libs.Json;
 import play.data.Form;
 import play.data.FormFactory;
@@ -32,27 +34,19 @@ public class IndexController extends Controller {
         return ok(login.render());
     }
 
+    public Result game(){
+        return ok(games.render());
+    }
+
+    public Result gamePage(int id){
+        return ok(gamePage.render());
+    }
+
     public Result cake(){
-        Session session = HibernateUtil.factory().openSession();
-        Transaction tx = null;
-
-
-        try{
-            tx = session.beginTransaction();
-            Cake cake;
-            cake = new Cake("choco");
-            session.save(cake);
-
-            tx.commit();
-        }
-        catch (Exception ex){
-            throw ex;
-        }
-        finally {
-            session.close();
-        }
-
-        return ok("Cake aangemaakt!");
+        GameRepo repo;
+        repo = new GameRepo();
+        repo.GenerateData();
+        return ok("did it");
     }
 
 }

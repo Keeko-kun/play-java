@@ -25,6 +25,7 @@ public class Application extends Controller{
         return ok(
             JavaScriptReverseRouter.create("JsRoutes",
                 routes.javascript.AuthController.GetToken(),
+                routes.javascript.ReviewController.GetTopSixReviews(),
                 routes.javascript.AuthController.GetName()
             )
         );

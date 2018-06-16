@@ -1,23 +1,31 @@
-async function load(){
-    var token;
+var app = angular.module("switch-it-up", []);
+app.controller("switchCtrl", function ($scope, $http) {
+    $scope.reviews = [];
 
-    token = getCookie("token");
-    
-    if (token == "") {
-        
-    }
-    else {
-        var name = await JsRoutes.controllers.AuthController.GetName(token).ajax({});
-    
-        console.log(name);
-    
-        if (name == ""){
-            
-        }
-        else {
-            $('#userBox').text('Welcome back, ' + name);
-        }
-    }
-}
+    if (getCookie("token") != ""){
+        $http({
+            url: "name/" + getCookie("token"),
+            method: "POST"
+        }).then(function successCallback(response) {
+            var name = response.data;
+            if (name == ""){
 
-load();
+            }
+            else {
+                $('#userBox').text('Welcome back, ' + name);
+            }
+        }, function errorCallback(response) {
+            $scope.error = response.statusText;
+        });
+    }
+
+    $http({
+        url: "reviews/topsix",
+        method: "GET"
+    }).then(function successCallback(response) {
+        $scope.reviews = response.data;
+        console.log($scope.reviews);
+    }, function errorCallback(response) {
+        $scope.error = response.statusText;
+    });
+});

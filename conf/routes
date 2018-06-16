@@ -12,28 +12,32 @@ GET     /message                    controllers.AsyncController.message
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
 
-GET /cake       controllers.IndexController.cake
+POST /cake       controllers.IndexController.cake
 
 GET /home        controllers.IndexController.home
 
 GET /login      controllers.IndexController.login
 
-GET /gamejson   controllers.GameController.gamejson
-
-POST /addgame    controllers.GameController.newGame
-
-GET /getgame    controllers.GameController.getGame
-
-GET /adduser    controllers.GameController.addUser
-
 GET /auth       controllers.AuthController.Authenticate
 
 POST /name/:token      controllers.AuthController.GetName(token: String)
-
-PUT /updategame controllers.GameController.updateGame
 
 POST /auth/:name/:pass      controllers.AuthController.GetToken(name: String, pass: String)
 
 GET /javascriptRoutes   controllers.Application.javascriptRoutes
 
 POST /login     controllers.AuthController.login
+
+GET /reviews/topsix     controllers.ReviewController.GetTopSixReviews
+
+GET /games       controllers.IndexController.game
+
+GET /game       controllers.GameController.GetAllGames
+
+POST /games/verify/:token      controllers.AuthController.VerifyAdmin(token: String)
+
+POST /games/:name/:price/:url       controllers.GameController.AddGame(name: String, price: Int, url: String)
+
+GET /game/:id       controllers.IndexController.gamePage(id: Int)
+
+POST /game/:id      controllers.GameController.FindGame(id: Int)

@@ -21,6 +21,10 @@ function getCookie(cname) {
     return "";
 }
 
+function deleteToken(){
+    document.cookie = 'token' + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+}
+
 async function getToken(username, password){
     var token = await JsRoutes.controllers.AuthController.GetToken(username, password).ajax({});
 
@@ -36,4 +40,27 @@ async function getToken(username, password){
     return token;
 }
 
+async function load(){
+    var token;
+
+    token = getCookie("token");
+
+    if (token == "") {
+
+    }
+    else {
+        var name = await JsRoutes.controllers.AuthController.GetName(token).ajax({});
+
+        console.log(name);
+
+        if (name == ""){
+
+        }
+        else {
+            $('#loginText').text('Logout');
+        }
+    }
+}
+
+load();
 

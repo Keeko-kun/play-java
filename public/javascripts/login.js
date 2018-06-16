@@ -15,6 +15,7 @@ async function load(){
             
         }
         else {
+            deleteToken();
             $(location).attr('href', '/home')
         }
     }

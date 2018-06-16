@@ -34,7 +34,7 @@ public class UserRepo {
         }
 
         if (user != null){
-            return JwtUtil.createToken(user.getUsername(), user.getPassword(), user.getIsAdmin());
+            return JwtUtil.createToken(user.getUsername(), user.getPassword(), user.isAdmin());
         }
         else{
             return null;
@@ -47,25 +47,25 @@ public class UserRepo {
         return username;
     }
 
-    public JsonNode AddUser(){
-        Session session = HibernateUtil.factory().openSession();
-        Transaction tx = null;
-        User user;
-
-        try{
-            tx = session.beginTransaction();
-            user = new User("admin", "admin", true);
-            session.save(user);
-            tx.commit();
-        }
-        catch (Exception ex){
-            throw ex;
-        }
-        finally {
-            session.close();
-        }
-
-        return Json.toJson(user);
-    }
+//    public JsonNode AddUser(){
+//        Session session = HibernateUtil.factory().openSession();
+//        Transaction tx = null;
+//        User user;
+//
+//        try{
+//            tx = session.beginTransaction();
+//            user = new User("admin", "admin", true);
+//            session.save(user);
+//            tx.commit();
+//        }
+//        catch (Exception ex){
+//            throw ex;
+//        }
+//        finally {
+//            session.close();
+//        }
+//
+//        return Json.toJson(user);
+//    }
 
 }
