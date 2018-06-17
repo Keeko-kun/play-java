@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/ShiMapleLeaf/Documents/play-java/conf/routes
-// @DATE:Sat Jun 16 17:06:19 CEST 2018
+// @DATE:Sun Jun 17 13:56:17 CEST 2018
 
 package router
 
@@ -15,47 +15,51 @@ import _root_.play.libs.F
 class Routes(
   override val errorHandler: play.api.http.HttpErrorHandler, 
   // @LINE:6
-  IndexController_5: controllers.IndexController,
+  IndexController_6: controllers.IndexController,
   // @LINE:8
   CountController_0: controllers.CountController,
   // @LINE:10
   AsyncController_2: controllers.AsyncController,
   // @LINE:13
-  Assets_6: controllers.Assets,
+  Assets_7: controllers.Assets,
   // @LINE:21
   AuthController_1: controllers.AuthController,
   // @LINE:27
-  Application_7: controllers.Application,
+  Application_8: controllers.Application,
   // @LINE:31
   ReviewController_3: controllers.ReviewController,
   // @LINE:35
   GameController_4: controllers.GameController,
+  // @LINE:55
+  DeveloperController_5: controllers.DeveloperController,
   val prefix: String
 ) extends GeneratedRouter {
 
    @javax.inject.Inject()
    def this(errorHandler: play.api.http.HttpErrorHandler,
     // @LINE:6
-    IndexController_5: controllers.IndexController,
+    IndexController_6: controllers.IndexController,
     // @LINE:8
     CountController_0: controllers.CountController,
     // @LINE:10
     AsyncController_2: controllers.AsyncController,
     // @LINE:13
-    Assets_6: controllers.Assets,
+    Assets_7: controllers.Assets,
     // @LINE:21
     AuthController_1: controllers.AuthController,
     // @LINE:27
-    Application_7: controllers.Application,
+    Application_8: controllers.Application,
     // @LINE:31
     ReviewController_3: controllers.ReviewController,
     // @LINE:35
-    GameController_4: controllers.GameController
-  ) = this(errorHandler, IndexController_5, CountController_0, AsyncController_2, Assets_6, AuthController_1, Application_7, ReviewController_3, GameController_4, "/")
+    GameController_4: controllers.GameController,
+    // @LINE:55
+    DeveloperController_5: controllers.DeveloperController
+  ) = this(errorHandler, IndexController_6, CountController_0, AsyncController_2, Assets_7, AuthController_1, Application_8, ReviewController_3, GameController_4, DeveloperController_5, "/")
 
   def withPrefix(prefix: String): Routes = {
     router.RoutesPrefix.setPrefix(prefix)
-    new Routes(errorHandler, IndexController_5, CountController_0, AsyncController_2, Assets_6, AuthController_1, Application_7, ReviewController_3, GameController_4, prefix)
+    new Routes(errorHandler, IndexController_6, CountController_0, AsyncController_2, Assets_7, AuthController_1, Application_8, ReviewController_3, GameController_4, DeveloperController_5, prefix)
   }
 
   private[this] val defaultPrefix: String = {
@@ -79,9 +83,16 @@ class Routes(
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """games""", """controllers.IndexController.game"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """game""", """controllers.GameController.GetAllGames"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """games/verify/""" + "$" + """token<[^/]+>""", """controllers.AuthController.VerifyAdmin(token:String)"""),
-    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """games/""" + "$" + """name<[^/]+>/""" + "$" + """price<[^/]+>/""" + "$" + """url<[^/]+>""", """controllers.GameController.AddGame(name:String, price:Int, url:String)"""),
+    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """games/""" + "$" + """name<[^/]+>/""" + "$" + """price<[^/]+>/""" + "$" + """url<[^/]+>/""" + "$" + """developer<[^/]+>""", """controllers.GameController.AddGame(name:String, price:Int, url:String, developer:Long)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """game/""" + "$" + """id<[^/]+>""", """controllers.IndexController.gamePage(id:Int)"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """game/""" + "$" + """id<[^/]+>""", """controllers.GameController.FindGame(id:Int)"""),
+    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """review/""" + "$" + """id<[^/]+>/""" + "$" + """score<[^/]+>/""" + "$" + """review<[^/]+>/""" + "$" + """token<[^/]+>""", """controllers.ReviewController.NewReview(id:Int, score:Int, review:String, token:String)"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """review/""" + "$" + """id<[^/]+>""", """controllers.IndexController.review(id:Int)"""),
+    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """review/""" + "$" + """id<[^/]+>""", """controllers.ReviewController.FindReview(id:Int)"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """developer/""" + "$" + """id<[^/]+>""", """controllers.IndexController.developer(id:Int)"""),
+    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """developer/""" + "$" + """id<[^/]+>""", """controllers.ReviewController.GetByDeveloper(id:Int)"""),
+    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """developer""", """controllers.DeveloperController.GetAllDevelopers"""),
+    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """developer/""" + "$" + """studio<[^/]+>/""" + "$" + """ceo<[^/]+>/""" + "$" + """thirdParty<[^/]+>/""" + "$" + """parent<[^/]+>/""" + "$" + """indie<[^/]+>""", """controllers.DeveloperController.AddDeveloper(studio:String, ceo:String, thirdParty:Boolean, parent:String, indie:Boolean)"""),
     Nil
   ).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
     case r @ (_,_,_) => s :+ r.asInstanceOf[(String,String,String)]
@@ -94,7 +105,7 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix)))
   )
   private[this] lazy val controllers_IndexController_index0_invoker = createInvoker(
-    IndexController_5.index,
+    IndexController_6.index,
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.IndexController",
@@ -148,7 +159,7 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("assets/"), DynamicPart("file", """.+""",false)))
   )
   private[this] lazy val controllers_Assets_versioned3_invoker = createInvoker(
-    Assets_6.versioned(fakeValue[String], fakeValue[Asset]),
+    Assets_7.versioned(fakeValue[String], fakeValue[Asset]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.Assets",
@@ -166,7 +177,7 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("cake")))
   )
   private[this] lazy val controllers_IndexController_cake4_invoker = createInvoker(
-    IndexController_5.cake,
+    IndexController_6.cake,
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.IndexController",
@@ -184,7 +195,7 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("home")))
   )
   private[this] lazy val controllers_IndexController_home5_invoker = createInvoker(
-    IndexController_5.home,
+    IndexController_6.home,
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.IndexController",
@@ -202,7 +213,7 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("login")))
   )
   private[this] lazy val controllers_IndexController_login6_invoker = createInvoker(
-    IndexController_5.login,
+    IndexController_6.login,
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.IndexController",
@@ -274,7 +285,7 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("javascriptRoutes")))
   )
   private[this] lazy val controllers_Application_javascriptRoutes10_invoker = createInvoker(
-    Application_7.javascriptRoutes,
+    Application_8.javascriptRoutes,
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.Application",
@@ -328,7 +339,7 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("games")))
   )
   private[this] lazy val controllers_IndexController_game13_invoker = createInvoker(
-    IndexController_5.game,
+    IndexController_6.game,
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.IndexController",
@@ -379,17 +390,17 @@ class Routes(
 
   // @LINE:39
   private[this] lazy val controllers_GameController_AddGame16_route = Route("POST",
-    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("games/"), DynamicPart("name", """[^/]+""",true), StaticPart("/"), DynamicPart("price", """[^/]+""",true), StaticPart("/"), DynamicPart("url", """[^/]+""",true)))
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("games/"), DynamicPart("name", """[^/]+""",true), StaticPart("/"), DynamicPart("price", """[^/]+""",true), StaticPart("/"), DynamicPart("url", """[^/]+""",true), StaticPart("/"), DynamicPart("developer", """[^/]+""",true)))
   )
   private[this] lazy val controllers_GameController_AddGame16_invoker = createInvoker(
-    GameController_4.AddGame(fakeValue[String], fakeValue[Int], fakeValue[String]),
+    GameController_4.AddGame(fakeValue[String], fakeValue[Int], fakeValue[String], fakeValue[Long]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.GameController",
       "AddGame",
-      Seq(classOf[String], classOf[Int], classOf[String]),
+      Seq(classOf[String], classOf[Int], classOf[String], classOf[Long]),
       "POST",
-      this.prefix + """games/""" + "$" + """name<[^/]+>/""" + "$" + """price<[^/]+>/""" + "$" + """url<[^/]+>""",
+      this.prefix + """games/""" + "$" + """name<[^/]+>/""" + "$" + """price<[^/]+>/""" + "$" + """url<[^/]+>/""" + "$" + """developer<[^/]+>""",
       """""",
       Seq()
     )
@@ -400,7 +411,7 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("game/"), DynamicPart("id", """[^/]+""",true)))
   )
   private[this] lazy val controllers_IndexController_gamePage17_invoker = createInvoker(
-    IndexController_5.gamePage(fakeValue[Int]),
+    IndexController_6.gamePage(fakeValue[Int]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.IndexController",
@@ -431,13 +442,139 @@ class Routes(
     )
   )
 
+  // @LINE:45
+  private[this] lazy val controllers_ReviewController_NewReview19_route = Route("POST",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("review/"), DynamicPart("id", """[^/]+""",true), StaticPart("/"), DynamicPart("score", """[^/]+""",true), StaticPart("/"), DynamicPart("review", """[^/]+""",true), StaticPart("/"), DynamicPart("token", """[^/]+""",true)))
+  )
+  private[this] lazy val controllers_ReviewController_NewReview19_invoker = createInvoker(
+    ReviewController_3.NewReview(fakeValue[Int], fakeValue[Int], fakeValue[String], fakeValue[String]),
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.ReviewController",
+      "NewReview",
+      Seq(classOf[Int], classOf[Int], classOf[String], classOf[String]),
+      "POST",
+      this.prefix + """review/""" + "$" + """id<[^/]+>/""" + "$" + """score<[^/]+>/""" + "$" + """review<[^/]+>/""" + "$" + """token<[^/]+>""",
+      """""",
+      Seq()
+    )
+  )
+
+  // @LINE:47
+  private[this] lazy val controllers_IndexController_review20_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("review/"), DynamicPart("id", """[^/]+""",true)))
+  )
+  private[this] lazy val controllers_IndexController_review20_invoker = createInvoker(
+    IndexController_6.review(fakeValue[Int]),
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.IndexController",
+      "review",
+      Seq(classOf[Int]),
+      "GET",
+      this.prefix + """review/""" + "$" + """id<[^/]+>""",
+      """""",
+      Seq()
+    )
+  )
+
+  // @LINE:49
+  private[this] lazy val controllers_ReviewController_FindReview21_route = Route("POST",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("review/"), DynamicPart("id", """[^/]+""",true)))
+  )
+  private[this] lazy val controllers_ReviewController_FindReview21_invoker = createInvoker(
+    ReviewController_3.FindReview(fakeValue[Int]),
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.ReviewController",
+      "FindReview",
+      Seq(classOf[Int]),
+      "POST",
+      this.prefix + """review/""" + "$" + """id<[^/]+>""",
+      """""",
+      Seq()
+    )
+  )
+
+  // @LINE:51
+  private[this] lazy val controllers_IndexController_developer22_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("developer/"), DynamicPart("id", """[^/]+""",true)))
+  )
+  private[this] lazy val controllers_IndexController_developer22_invoker = createInvoker(
+    IndexController_6.developer(fakeValue[Int]),
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.IndexController",
+      "developer",
+      Seq(classOf[Int]),
+      "GET",
+      this.prefix + """developer/""" + "$" + """id<[^/]+>""",
+      """""",
+      Seq()
+    )
+  )
+
+  // @LINE:53
+  private[this] lazy val controllers_ReviewController_GetByDeveloper23_route = Route("POST",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("developer/"), DynamicPart("id", """[^/]+""",true)))
+  )
+  private[this] lazy val controllers_ReviewController_GetByDeveloper23_invoker = createInvoker(
+    ReviewController_3.GetByDeveloper(fakeValue[Int]),
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.ReviewController",
+      "GetByDeveloper",
+      Seq(classOf[Int]),
+      "POST",
+      this.prefix + """developer/""" + "$" + """id<[^/]+>""",
+      """""",
+      Seq()
+    )
+  )
+
+  // @LINE:55
+  private[this] lazy val controllers_DeveloperController_GetAllDevelopers24_route = Route("POST",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("developer")))
+  )
+  private[this] lazy val controllers_DeveloperController_GetAllDevelopers24_invoker = createInvoker(
+    DeveloperController_5.GetAllDevelopers,
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.DeveloperController",
+      "GetAllDevelopers",
+      Nil,
+      "POST",
+      this.prefix + """developer""",
+      """""",
+      Seq()
+    )
+  )
+
+  // @LINE:57
+  private[this] lazy val controllers_DeveloperController_AddDeveloper25_route = Route("POST",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("developer/"), DynamicPart("studio", """[^/]+""",true), StaticPart("/"), DynamicPart("ceo", """[^/]+""",true), StaticPart("/"), DynamicPart("thirdParty", """[^/]+""",true), StaticPart("/"), DynamicPart("parent", """[^/]+""",true), StaticPart("/"), DynamicPart("indie", """[^/]+""",true)))
+  )
+  private[this] lazy val controllers_DeveloperController_AddDeveloper25_invoker = createInvoker(
+    DeveloperController_5.AddDeveloper(fakeValue[String], fakeValue[String], fakeValue[Boolean], fakeValue[String], fakeValue[Boolean]),
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.DeveloperController",
+      "AddDeveloper",
+      Seq(classOf[String], classOf[String], classOf[Boolean], classOf[String], classOf[Boolean]),
+      "POST",
+      this.prefix + """developer/""" + "$" + """studio<[^/]+>/""" + "$" + """ceo<[^/]+>/""" + "$" + """thirdParty<[^/]+>/""" + "$" + """parent<[^/]+>/""" + "$" + """indie<[^/]+>""",
+      """""",
+      Seq()
+    )
+  )
+
 
   def routes: PartialFunction[RequestHeader, Handler] = {
   
     // @LINE:6
     case controllers_IndexController_index0_route(params@_) =>
       call { 
-        controllers_IndexController_index0_invoker.call(IndexController_5.index)
+        controllers_IndexController_index0_invoker.call(IndexController_6.index)
       }
   
     // @LINE:8
@@ -455,25 +592,25 @@ class Routes(
     // @LINE:13
     case controllers_Assets_versioned3_route(params@_) =>
       call(Param[String]("path", Right("/public")), params.fromPath[Asset]("file", None)) { (path, file) =>
-        controllers_Assets_versioned3_invoker.call(Assets_6.versioned(path, file))
+        controllers_Assets_versioned3_invoker.call(Assets_7.versioned(path, file))
       }
   
     // @LINE:15
     case controllers_IndexController_cake4_route(params@_) =>
       call { 
-        controllers_IndexController_cake4_invoker.call(IndexController_5.cake)
+        controllers_IndexController_cake4_invoker.call(IndexController_6.cake)
       }
   
     // @LINE:17
     case controllers_IndexController_home5_route(params@_) =>
       call { 
-        controllers_IndexController_home5_invoker.call(IndexController_5.home)
+        controllers_IndexController_home5_invoker.call(IndexController_6.home)
       }
   
     // @LINE:19
     case controllers_IndexController_login6_route(params@_) =>
       call { 
-        controllers_IndexController_login6_invoker.call(IndexController_5.login)
+        controllers_IndexController_login6_invoker.call(IndexController_6.login)
       }
   
     // @LINE:21
@@ -497,7 +634,7 @@ class Routes(
     // @LINE:27
     case controllers_Application_javascriptRoutes10_route(params@_) =>
       call { 
-        controllers_Application_javascriptRoutes10_invoker.call(Application_7.javascriptRoutes)
+        controllers_Application_javascriptRoutes10_invoker.call(Application_8.javascriptRoutes)
       }
   
     // @LINE:29
@@ -515,7 +652,7 @@ class Routes(
     // @LINE:33
     case controllers_IndexController_game13_route(params@_) =>
       call { 
-        controllers_IndexController_game13_invoker.call(IndexController_5.game)
+        controllers_IndexController_game13_invoker.call(IndexController_6.game)
       }
   
     // @LINE:35
@@ -532,20 +669,62 @@ class Routes(
   
     // @LINE:39
     case controllers_GameController_AddGame16_route(params@_) =>
-      call(params.fromPath[String]("name", None), params.fromPath[Int]("price", None), params.fromPath[String]("url", None)) { (name, price, url) =>
-        controllers_GameController_AddGame16_invoker.call(GameController_4.AddGame(name, price, url))
+      call(params.fromPath[String]("name", None), params.fromPath[Int]("price", None), params.fromPath[String]("url", None), params.fromPath[Long]("developer", None)) { (name, price, url, developer) =>
+        controllers_GameController_AddGame16_invoker.call(GameController_4.AddGame(name, price, url, developer))
       }
   
     // @LINE:41
     case controllers_IndexController_gamePage17_route(params@_) =>
       call(params.fromPath[Int]("id", None)) { (id) =>
-        controllers_IndexController_gamePage17_invoker.call(IndexController_5.gamePage(id))
+        controllers_IndexController_gamePage17_invoker.call(IndexController_6.gamePage(id))
       }
   
     // @LINE:43
     case controllers_GameController_FindGame18_route(params@_) =>
       call(params.fromPath[Int]("id", None)) { (id) =>
         controllers_GameController_FindGame18_invoker.call(GameController_4.FindGame(id))
+      }
+  
+    // @LINE:45
+    case controllers_ReviewController_NewReview19_route(params@_) =>
+      call(params.fromPath[Int]("id", None), params.fromPath[Int]("score", None), params.fromPath[String]("review", None), params.fromPath[String]("token", None)) { (id, score, review, token) =>
+        controllers_ReviewController_NewReview19_invoker.call(ReviewController_3.NewReview(id, score, review, token))
+      }
+  
+    // @LINE:47
+    case controllers_IndexController_review20_route(params@_) =>
+      call(params.fromPath[Int]("id", None)) { (id) =>
+        controllers_IndexController_review20_invoker.call(IndexController_6.review(id))
+      }
+  
+    // @LINE:49
+    case controllers_ReviewController_FindReview21_route(params@_) =>
+      call(params.fromPath[Int]("id", None)) { (id) =>
+        controllers_ReviewController_FindReview21_invoker.call(ReviewController_3.FindReview(id))
+      }
+  
+    // @LINE:51
+    case controllers_IndexController_developer22_route(params@_) =>
+      call(params.fromPath[Int]("id", None)) { (id) =>
+        controllers_IndexController_developer22_invoker.call(IndexController_6.developer(id))
+      }
+  
+    // @LINE:53
+    case controllers_ReviewController_GetByDeveloper23_route(params@_) =>
+      call(params.fromPath[Int]("id", None)) { (id) =>
+        controllers_ReviewController_GetByDeveloper23_invoker.call(ReviewController_3.GetByDeveloper(id))
+      }
+  
+    // @LINE:55
+    case controllers_DeveloperController_GetAllDevelopers24_route(params@_) =>
+      call { 
+        controllers_DeveloperController_GetAllDevelopers24_invoker.call(DeveloperController_5.GetAllDevelopers)
+      }
+  
+    // @LINE:57
+    case controllers_DeveloperController_AddDeveloper25_route(params@_) =>
+      call(params.fromPath[String]("studio", None), params.fromPath[String]("ceo", None), params.fromPath[Boolean]("thirdParty", None), params.fromPath[String]("parent", None), params.fromPath[Boolean]("indie", None)) { (studio, ceo, thirdParty, parent, indie) =>
+        controllers_DeveloperController_AddDeveloper25_invoker.call(DeveloperController_5.AddDeveloper(studio, ceo, thirdParty, parent, indie))
       }
   }
 }

@@ -3,12 +3,22 @@ package models;
 import javax.persistence.*;
 import com.fasterxml.jackson.annotation.*;
 
-@NamedQueries(
+@NamedQueries({
         @NamedQuery(
                 name = "Review.TopSix",
                 query = "select r from Review as r order by r.id desc"
+        ),
+        @NamedQuery(
+                name = "Review.FindById",
+                query = "select r from Review as r where r.id = :id"
+        ),
+        @NamedQuery(
+                name = "Review.GetByDeveloper",
+                query = "select r from Review r " +
+                        "join r.game g " +
+                        "join g.developers d where d.id = :id"
         )
-)
+})
 
 @Entity
 @Table (name = "Review")
@@ -19,11 +29,11 @@ public class Review {
     @Column(name = "id")
     private Long id;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     @JsonIgnoreProperties("reviews")
     private Game game;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     private User user;
 
     @Column(name = "reviewText")

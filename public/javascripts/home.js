@@ -24,7 +24,6 @@ app.controller("switchCtrl", function ($scope, $http) {
         method: "GET"
     }).then(function successCallback(response) {
         $scope.reviews = response.data;
-        console.log($scope.reviews);
     }, function errorCallback(response) {
         $scope.error = response.statusText;
     });

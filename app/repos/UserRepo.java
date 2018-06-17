@@ -34,7 +34,7 @@ public class UserRepo {
         }
 
         if (user != null){
-            return JwtUtil.createToken(user.getUsername(), user.getPassword(), user.isAdmin());
+            return JwtUtil.createToken(user.getUsername(), user.getId(), user.isAdmin());
         }
         else{
             return null;

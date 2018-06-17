@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/ShiMapleLeaf/Documents/play-java/conf/routes
-// @DATE:Sat Jun 16 17:06:19 CEST 2018
+// @DATE:Sun Jun 17 13:56:17 CEST 2018
 
 import play.api.mvc.Call
 
@@ -39,16 +39,37 @@ package controllers {
       Call("POST", _prefix + { _defaultPrefix } + "game/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Int]].unbind("id", id)))
     }
   
-    // @LINE:39
-    def AddGame(name:String, price:Int, url:String): Call = {
-      
-      Call("POST", _prefix + { _defaultPrefix } + "games/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[String]].unbind("name", name)) + "/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Int]].unbind("price", price)) + "/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[String]].unbind("url", url)))
-    }
-  
     // @LINE:35
     def GetAllGames(): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "game")
+    }
+  
+    // @LINE:39
+    def AddGame(name:String, price:Int, url:String, developer:Long): Call = {
+      
+      Call("POST", _prefix + { _defaultPrefix } + "games/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[String]].unbind("name", name)) + "/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Int]].unbind("price", price)) + "/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[String]].unbind("url", url)) + "/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("developer", developer)))
+    }
+  
+  }
+
+  // @LINE:55
+  class ReverseDeveloperController(_prefix: => String) {
+    def _defaultPrefix: String = {
+      if (_prefix.endsWith("/")) "" else "/"
+    }
+
+  
+    // @LINE:55
+    def GetAllDevelopers(): Call = {
+      
+      Call("POST", _prefix + { _defaultPrefix } + "developer")
+    }
+  
+    // @LINE:57
+    def AddDeveloper(studio:String, ceo:String, thirdParty:Boolean, parent:String, indie:Boolean): Call = {
+      
+      Call("POST", _prefix + { _defaultPrefix } + "developer/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[String]].unbind("studio", studio)) + "/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[String]].unbind("ceo", ceo)) + "/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Boolean]].unbind("thirdParty", thirdParty)) + "/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[String]].unbind("parent", parent)) + "/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Boolean]].unbind("indie", indie)))
     }
   
   }
@@ -75,10 +96,28 @@ package controllers {
     }
 
   
+    // @LINE:53
+    def GetByDeveloper(id:Int): Call = {
+      
+      Call("POST", _prefix + { _defaultPrefix } + "developer/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Int]].unbind("id", id)))
+    }
+  
     // @LINE:31
     def GetTopSixReviews(): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "reviews/topsix")
+    }
+  
+    // @LINE:49
+    def FindReview(id:Int): Call = {
+      
+      Call("POST", _prefix + { _defaultPrefix } + "review/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Int]].unbind("id", id)))
+    }
+  
+    // @LINE:45
+    def NewReview(id:Int, score:Int, review:String, token:String): Call = {
+      
+      Call("POST", _prefix + { _defaultPrefix } + "review/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Int]].unbind("id", id)) + "/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Int]].unbind("score", score)) + "/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[String]].unbind("review", review)) + "/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[String]].unbind("token", token)))
     }
   
   }
@@ -119,6 +158,18 @@ package controllers {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
+  
+    // @LINE:47
+    def review(id:Int): Call = {
+      
+      Call("GET", _prefix + { _defaultPrefix } + "review/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Int]].unbind("id", id)))
+    }
+  
+    // @LINE:51
+    def developer(id:Int): Call = {
+      
+      Call("GET", _prefix + { _defaultPrefix } + "developer/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Int]].unbind("id", id)))
+    }
   
     // @LINE:33
     def game(): Call = {

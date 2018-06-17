@@ -25,4 +25,22 @@ public class ReviewController extends Controller {
         return ok(Json.toJson(reviews));
     }
 
+    public Result NewReview(int id, int score, String review, String token){
+        ReviewRepo repo = new ReviewRepo();
+        repo.NewReview(id, score, review, token);
+        return ok("added review for game with id " + id);
+    }
+
+    public Result FindReview(int id){
+        ReviewRepo repo = new ReviewRepo();
+        Review review = repo.FindReview(id);
+        return ok(Json.toJson(review));
+    }
+
+    public Result GetByDeveloper(int id){
+        ReviewRepo repo = new ReviewRepo();
+        List<Review> reviews = repo.GetByDeveloper(id);
+        return ok(Json.toJson(reviews));
+    }
+
 }

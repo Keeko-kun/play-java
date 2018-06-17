@@ -28,10 +28,31 @@
         <main class="centerpage" ng-show="loaded">
             <div ng-show="admin">
                 <h1>Add Game</h1>
-                <p>Game Title:</p> <input type="text" ng-model="name"></br></br>
-                <p>Price:</p> <input type="text" ng-model="price"></br></br>
-                <p>Image URL:</p> <input type="text" ng-model="url"></br></br>
+                <p>Game Title:</p> <input type="text" ng-model="name"><br><br>
+                <p>Price:</p> <input type="text" ng-model="price"><br><br>
+                <p>Image URL:</p> <input type="text" ng-model="url"><br><br>
+                <p>Developer:</p> <select ng-model="selectedDev" ng-options="y.name for (x, y) in developers"></select><br><br>
                 <button type="button" ng-click="addGame()">Add Game</button>
+                <hr>
+                <h1>Add Developer</h1>
+                <p>Studio Name:</p> <input type="text" ng-model="studio"><br><br>
+                <p>CEO:</p> <input type="text" ng-model="ceo"><br><br>
+                <label>
+                    <input type="checkbox" ng-model="thirdParty">
+                    <span class="checkable">Third Party Developer</span>
+                </label><br><br>
+                <div ng-switch="thirdParty">
+                    <div ng-switch-when="true">
+                        <label>
+                            <input type="checkbox" ng-model="indie">
+                            <span class="checkable">Indie Studio</span>
+                        </label><br><br>
+                    </div>
+                    <div ng-switch-when="false">
+                        <p>Parent Studio:</p> <input type="text" ng-model="parent"><br><br>
+                    </div>
+                </div>
+                <button type="button" ng-click="addDeveloper()">Add Developer</button>
                 <hr>
             </div>
             <h1>All Games On Switch-It-Up</h1>
@@ -43,6 +64,7 @@
                         </header>
                         <section>
                             <img class="gameImg" src="@routes.Assets.versioned("images/{{g.url}}")")>
+                            <a class="linkTitle" ng-repeat="dev in g.developers" ng-href="developer/{{dev.id}}">{{dev.name}}<br></a>
                             <a ng-href="game/{{g.id}}">See All Reviews &#8594;</a>
                         </section>
 

@@ -16,12 +16,18 @@ public class HibernateUtil {
             Thread.currentThread().setContextClassLoader(Game.class.getClassLoader());
             Thread.currentThread().setContextClassLoader(User.class.getClassLoader());
             Thread.currentThread().setContextClassLoader(Review.class.getClassLoader());
+            Thread.currentThread().setContextClassLoader(Developer.class.getClassLoader());
+            Thread.currentThread().setContextClassLoader(FirstParty.class.getClassLoader());
+            Thread.currentThread().setContextClassLoader(ThirdParty.class.getClassLoader());
             sessionFactory = new Configuration()
                     .configure()
                     .addAnnotatedClass(Cake.class)
                     .addAnnotatedClass(Game.class)
                     .addAnnotatedClass(User.class)
                     .addAnnotatedClass(Review.class)
+                    .addAnnotatedClass(Developer.class)
+                    .addAnnotatedClass(FirstParty.class)
+                    .addAnnotatedClass(ThirdParty.class)
                     .buildSessionFactory();
         } catch (Throwable ex) {
             // Log the exception.

@@ -3088,3 +3088,23 @@ select.stack {
 input[type="submit"]{
   color: #fbfbfb;
 }
+
+.reviewScore {
+  background-color: #6c3;
+  display: table-cell;
+  padding-top: .5em;
+  padding-bottom: .5em;
+  padding-right: .75em;
+  padding-left: .75em;
+  color: #fbfbfb;
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.linkTitle {
+  color: #111;
+}
+
+.linkTitle:hover{
+  color: #4488f4;
+}

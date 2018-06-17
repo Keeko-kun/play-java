@@ -6,12 +6,16 @@ import java.util.Arrays;
 import java.util.List;
 import com.fasterxml.jackson.annotation.*;
 
-@NamedQueries(
+@NamedQueries({
         @NamedQuery(
-            name = "User.auth",
-            query = "select u from User as u where u.username = :username and u.password = :password"
+                name = "User.auth",
+                query = "select u from User as u where u.username = :username and u.password = :password"
+        ),
+        @NamedQuery(
+                name = "User.FindById",
+                query = "select u from User u where u.id = :id"
         )
-)
+})
 
 
 @Entity
@@ -27,6 +31,7 @@ public class User {
     private String username;
 
     @Column(name = "password")
+    @JsonIgnore
     private String password;
 
     @Column(name = "isAdmin")
@@ -34,7 +39,7 @@ public class User {
 
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "user")
     @JsonIgnore
-    private List<Review> reviews;
+    private Set<Review> reviews;
 
     public Long getId() {
         return id;
@@ -68,11 +73,11 @@ public class User {
         isAdmin = admin;
     }
 
-    public List<Review> getReviews() {
+    public Set<Review> getReviews() {
         return reviews;
     }
 
-    public void setReviews(List<Review> reviews) {
+    public void setReviews(Set<Review> reviews) {
         this.reviews = reviews;
     }
 
@@ -80,7 +85,7 @@ public class User {
 
     public User (){ }
 
-    public User(Long id, String username, String password, boolean isAdmin, List<Review> reviews) {
+    public User(Long id, String username, String password, boolean isAdmin, Set<Review> reviews) {
         this.id = id;
         this.username = username;
         this.password = password;

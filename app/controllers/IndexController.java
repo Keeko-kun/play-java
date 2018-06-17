@@ -38,6 +38,14 @@ public class IndexController extends Controller {
         return ok(games.render());
     }
 
+    public Result review(int id) {
+        return ok(review.render());
+    }
+
+    public Result developer(int id) {
+        return ok(developer.render());
+    }
+
     public Result gamePage(int id){
         return ok(gamePage.render());
     }

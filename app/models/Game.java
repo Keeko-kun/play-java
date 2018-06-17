@@ -4,6 +4,7 @@ import javax.persistence.*;
 import java.util.*;
 import java.util.Arrays;
 import java.util.List;
+import java.util.ArrayList;
 import com.fasterxml.jackson.annotation.*;
 
 
@@ -38,8 +39,12 @@ public class Game {
     private String url;
 
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "game")
-    @JsonIgnoreProperties("game")
-    private List<Review> reviews;
+    @JsonIgnoreProperties({"game", "r.game"})
+    private Set<Review> reviews;
+
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "games")
+    @JsonIgnoreProperties("games")
+    private Set<Developer> developers;
 
     public Long getId() {
         return id;
@@ -65,11 +70,11 @@ public class Game {
         this.price = price;
     }
 
-    public List<Review> getReviews() {
+    public Set<Review> getReviews() {
         return reviews;
     }
 
-    public void setReviews(List<Review> reviews) {
+    public void setReviews(Set<Review> reviews) {
         this.reviews = reviews;
     }
 
@@ -81,13 +86,29 @@ public class Game {
         this.url = url;
     }
 
-    public Game (){ }
+    public Set<Developer> getDevelopers() {
+        return developers;
+    }
 
-    public Game(Long id, String name, int price, List<Review> reviews, String url) {
+    public void setDevelopers(Set<Developer> developers) {
+        this.developers = developers;
+    }
+
+    public void addDeveloper(Developer dev){
+        developers.add(dev);
+        dev.addGame(this);
+    }
+
+    public Game (){
+        developers = new HashSet<Developer>();
+    }
+
+    public Game(Long id, String name, int price, String url, Set<Review> reviews, Set<Developer> developers) {
         this.id = id;
         this.name = name;
         this.price = price;
-        this.reviews = reviews;
         this.url = url;
+        this.reviews = reviews;
+        this.developers = developers;
     }
 }

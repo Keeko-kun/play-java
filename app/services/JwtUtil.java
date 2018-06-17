@@ -10,12 +10,13 @@ public class JwtUtil{
 
     private final static String secret = "jJ9M5hpHvhnJfmYH5zbKmmZPVGL";
 
-    public static String createToken(String username, String password, boolean isAdmin)
+    public static String createToken(String username, Long id, boolean isAdmin)
     {
         try {
             return JWT.create()
                     .withIssuer("auth0")
                     .withClaim("username", username)
+                    .withClaim("id", id)
                     .withClaim("isAdmin", isAdmin)
                     .sign(Algorithm.HMAC256(secret));
         }
@@ -32,6 +33,23 @@ public class JwtUtil{
                     .build();
             DecodedJWT jwt = verifier.verify(token);
             return jwt.getClaim("username").asString();
+        } catch (JWTDecodeException exception){
+            return null;
+        } catch (UnsupportedEncodingException e) {
+            return null;
+        } catch (SignatureVerificationException e){
+            return null;
+        }
+    }
+
+    public static Long getUserIdFromToken(String token)
+    {
+        try {
+            JWTVerifier verifier = JWT.require(Algorithm.HMAC256(secret))
+                    .withIssuer("auth0")
+                    .build();
+            DecodedJWT jwt = verifier.verify(token);
+            return jwt.getClaim("id").asLong();
         } catch (JWTDecodeException exception){
             return null;
         } catch (UnsupportedEncodingException e) {

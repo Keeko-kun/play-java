@@ -25,9 +25,9 @@ public class GameController extends Controller {
         return ok(Json.toJson(games));
     }
 
-    public Result AddGame(String name, int price, String url){
+    public Result AddGame(String name, int price, String url, Long id){
         GameRepo repo = new GameRepo();
-        repo.AddGame(name, price, url);
+        repo.AddGame(name, price, url, id);
         return ok("did it reddit");
     }
 

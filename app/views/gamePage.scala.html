@@ -44,7 +44,7 @@
                             <img class="gameImg" src="@routes.Assets.versioned("images/{{game.url}}")")>
                             <p class="score flex one">{{r.score}}</p>
                             <p>Review By: {{r.user.username}}</p>
-                            <a href="">Read More &#8594;</a>
+                            <a ng-href="../review/{{r.id}}">Read More &#8594;</a>
                         </section>
 
                     </article>

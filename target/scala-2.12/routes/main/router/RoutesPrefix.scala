@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/ShiMapleLeaf/Documents/play-java/conf/routes
-// @DATE:Sat Jun 16 17:06:19 CEST 2018
+// @DATE:Sun Jun 17 13:56:17 CEST 2018
 
 
 package router {

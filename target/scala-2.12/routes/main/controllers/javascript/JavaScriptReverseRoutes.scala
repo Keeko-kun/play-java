@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/ShiMapleLeaf/Documents/play-java/conf/routes
-// @DATE:Sat Jun 16 17:06:19 CEST 2018
+// @DATE:Sun Jun 17 13:56:17 CEST 2018
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -49,22 +49,52 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:39
-    def AddGame: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.GameController.AddGame",
-      """
-        function(name0,price1,url2) {
-          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "games/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[String]].javascriptUnbind + """)("name", name0)) + "/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Int]].javascriptUnbind + """)("price", price1)) + "/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[String]].javascriptUnbind + """)("url", url2))})
-        }
-      """
-    )
-  
     // @LINE:35
     def GetAllGames: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.GameController.GetAllGames",
       """
         function() {
           return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "game"})
+        }
+      """
+    )
+  
+    // @LINE:39
+    def AddGame: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.GameController.AddGame",
+      """
+        function(name0,price1,url2,developer3) {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "games/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[String]].javascriptUnbind + """)("name", name0)) + "/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Int]].javascriptUnbind + """)("price", price1)) + "/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[String]].javascriptUnbind + """)("url", url2)) + "/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Long]].javascriptUnbind + """)("developer", developer3))})
+        }
+      """
+    )
+  
+  }
+
+  // @LINE:55
+  class ReverseDeveloperController(_prefix: => String) {
+
+    def _defaultPrefix: String = {
+      if (_prefix.endsWith("/")) "" else "/"
+    }
+
+  
+    // @LINE:55
+    def GetAllDevelopers: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.DeveloperController.GetAllDevelopers",
+      """
+        function() {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "developer"})
+        }
+      """
+    )
+  
+    // @LINE:57
+    def AddDeveloper: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.DeveloperController.AddDeveloper",
+      """
+        function(studio0,ceo1,thirdParty2,parent3,indie4) {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "developer/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[String]].javascriptUnbind + """)("studio", studio0)) + "/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[String]].javascriptUnbind + """)("ceo", ceo1)) + "/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Boolean]].javascriptUnbind + """)("thirdParty", thirdParty2)) + "/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[String]].javascriptUnbind + """)("parent", parent3)) + "/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Boolean]].javascriptUnbind + """)("indie", indie4))})
         }
       """
     )
@@ -99,12 +129,42 @@ package controllers.javascript {
     }
 
   
+    // @LINE:53
+    def GetByDeveloper: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.ReviewController.GetByDeveloper",
+      """
+        function(id0) {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "developer/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Int]].javascriptUnbind + """)("id", id0))})
+        }
+      """
+    )
+  
     // @LINE:31
     def GetTopSixReviews: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.ReviewController.GetTopSixReviews",
       """
         function() {
           return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "reviews/topsix"})
+        }
+      """
+    )
+  
+    // @LINE:49
+    def FindReview: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.ReviewController.FindReview",
+      """
+        function(id0) {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "review/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Int]].javascriptUnbind + """)("id", id0))})
+        }
+      """
+    )
+  
+    // @LINE:45
+    def NewReview: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.ReviewController.NewReview",
+      """
+        function(id0,score1,review2,token3) {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "review/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Int]].javascriptUnbind + """)("id", id0)) + "/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Int]].javascriptUnbind + """)("score", score1)) + "/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[String]].javascriptUnbind + """)("review", review2)) + "/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[String]].javascriptUnbind + """)("token", token3))})
         }
       """
     )
@@ -158,6 +218,26 @@ package controllers.javascript {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
+  
+    // @LINE:47
+    def review: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.IndexController.review",
+      """
+        function(id0) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "review/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Int]].javascriptUnbind + """)("id", id0))})
+        }
+      """
+    )
+  
+    // @LINE:51
+    def developer: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.IndexController.developer",
+      """
+        function(id0) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "developer/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Int]].javascriptUnbind + """)("id", id0))})
+        }
+      """
+    )
   
     // @LINE:33
     def game: JavaScriptReverseRoute = JavaScriptReverseRoute(

@@ -36,8 +36,22 @@ GET /game       controllers.GameController.GetAllGames
 
 POST /games/verify/:token      controllers.AuthController.VerifyAdmin(token: String)
 
-POST /games/:name/:price/:url       controllers.GameController.AddGame(name: String, price: Int, url: String)
+POST /games/:name/:price/:url/:developer    controllers.GameController.AddGame(name: String, price: Int, url: String, developer: Long)
 
 GET /game/:id       controllers.IndexController.gamePage(id: Int)
 
 POST /game/:id      controllers.GameController.FindGame(id: Int)
+
+POST /review/:id/:score/:review/:token      controllers.ReviewController.NewReview(id: Int, score: Int, review: String, token: String)
+
+GET /review/:id     controllers.IndexController.review(id: Int)
+
+POST /review/:id        controllers.ReviewController.FindReview(id: Int)
+
+GET /developer/:id          controllers.IndexController.developer(id: Int)
+
+POST /developer/:id         controllers.ReviewController.GetByDeveloper(id: Int)
+
+POST /developer          controllers.DeveloperController.GetAllDevelopers
+
+POST /developer/:studio/:ceo/:thirdParty/:parent/:indie         controllers.DeveloperController.AddDeveloper(studio: String, ceo: String, thirdParty: Boolean, parent: String, indie: Boolean)

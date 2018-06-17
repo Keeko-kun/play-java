@@ -18,7 +18,7 @@
     </database>
     <schema id="5" parent="2" name="dbo">
       <ObjectId>1</ObjectId>
-      <IntrospectionTimestamp>2018-06-16.16:54:50.570</IntrospectionTimestamp>
+      <IntrospectionTimestamp>2018-06-17.13:13:21.987</IntrospectionTimestamp>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -59,195 +59,210 @@
       <ObjectId>16393</ObjectId>
     </schema>
     <table id="18" parent="5" name="Cake">
-      <ObjectId>34099162</ObjectId>
-      <CreatedTimestamp>2018-05-14.13:07:03.547</CreatedTimestamp>
-      <ModifiedTimestamp>2018-05-14.13:07:03.547</ModifiedTimestamp>
+      <ObjectId>1086626914</ObjectId>
+      <CreatedTimestamp>2018-06-17.13:13:14.027</CreatedTimestamp>
+      <ModifiedTimestamp>2018-06-17.13:13:14.027</ModifiedTimestamp>
     </table>
     <table id="19" parent="5" name="Cookie">
       <ObjectId>2101582525</ObjectId>
       <CreatedTimestamp>2018-05-07.13:34:45.490</CreatedTimestamp>
       <ModifiedTimestamp>2018-05-07.13:34:45.490</ModifiedTimestamp>
     </table>
-    <table id="20" parent="5" name="Fruit">
-      <ObjectId>2133582639</ObjectId>
-      <CreatedTimestamp>2018-05-07.13:42:18.697</CreatedTimestamp>
-      <ModifiedTimestamp>2018-05-07.13:42:18.697</ModifiedTimestamp>
+    <table id="20" parent="5" name="Developer">
+      <ObjectId>1118627028</ObjectId>
+      <CreatedTimestamp>2018-06-17.13:13:14.140</CreatedTimestamp>
+      <ModifiedTimestamp>2018-06-17.13:13:15.133</ModifiedTimestamp>
     </table>
-    <table id="21" parent="5" name="Game">
-      <ObjectId>1010102639</ObjectId>
-      <CreatedTimestamp>2018-06-16.16:54:26.423</CreatedTimestamp>
-      <ModifiedTimestamp>2018-06-16.16:54:28.583</ModifiedTimestamp>
+    <table id="21" parent="5" name="Developer_Game">
+      <ObjectId>1150627142</ObjectId>
+      <CreatedTimestamp>2018-06-17.13:13:14.263</CreatedTimestamp>
+      <ModifiedTimestamp>2018-06-17.13:13:14.873</ModifiedTimestamp>
     </table>
-    <table id="22" parent="5" name="Review">
-      <ObjectId>1042102753</ObjectId>
-      <CreatedTimestamp>2018-06-16.16:54:27.300</CreatedTimestamp>
-      <ModifiedTimestamp>2018-06-16.16:54:31.463</ModifiedTimestamp>
+    <table id="22" parent="5" name="FirstParty">
+      <ObjectId>1166627199</ObjectId>
+      <CreatedTimestamp>2018-06-17.13:13:14.387</CreatedTimestamp>
+      <ModifiedTimestamp>2018-06-17.13:13:14.923</ModifiedTimestamp>
     </table>
-    <table id="23" parent="5" name="Users">
-      <ObjectId>1074102867</ObjectId>
-      <CreatedTimestamp>2018-06-16.16:54:27.917</CreatedTimestamp>
-      <ModifiedTimestamp>2018-06-16.16:54:31.853</ModifiedTimestamp>
+    <table id="23" parent="5" name="Game">
+      <ObjectId>1198627313</ObjectId>
+      <CreatedTimestamp>2018-06-17.13:13:14.510</CreatedTimestamp>
+      <ModifiedTimestamp>2018-06-17.13:13:15</ModifiedTimestamp>
     </table>
-    <routine id="24" parent="5" name="csrGetRandomShip">
+    <table id="24" parent="5" name="Review">
+      <ObjectId>1230627427</ObjectId>
+      <CreatedTimestamp>2018-06-17.13:13:14.610</CreatedTimestamp>
+      <ModifiedTimestamp>2018-06-17.13:13:15.073</ModifiedTimestamp>
+    </table>
+    <table id="25" parent="5" name="ThirdParty">
+      <ObjectId>1262627541</ObjectId>
+      <CreatedTimestamp>2018-06-17.13:13:14.690</CreatedTimestamp>
+      <ModifiedTimestamp>2018-06-17.13:13:15.130</ModifiedTimestamp>
+    </table>
+    <table id="26" parent="5" name="Users">
+      <ObjectId>1294627655</ObjectId>
+      <CreatedTimestamp>2018-06-17.13:13:14.753</CreatedTimestamp>
+      <ModifiedTimestamp>2018-06-17.13:13:15.077</ModifiedTimestamp>
+    </table>
+    <routine id="27" parent="5" name="csrGetRandomShip">
       <ObjectId>1237579447</ObjectId>
       <CreatedTimestamp>2017-05-28.16:27:55.017</CreatedTimestamp>
       <ModifiedTimestamp>2017-06-04.12:46:55.707</ModifiedTimestamp>
       <RoutineKind>procedure</RoutineKind>
       <RoutineType>proc</RoutineType>
     </routine>
-    <routine id="25" parent="5" name="csrPrintPlayerShips">
+    <routine id="28" parent="5" name="csrPrintPlayerShips">
       <ObjectId>949578421</ObjectId>
       <CreatedTimestamp>2017-05-16.11:37:58.277</CreatedTimestamp>
       <ModifiedTimestamp>2017-05-16.14:59:47.880</ModifiedTimestamp>
       <RoutineKind>procedure</RoutineKind>
       <RoutineType>proc</RoutineType>
     </routine>
-    <routine id="26" parent="5" name="spAddResult">
+    <routine id="29" parent="5" name="spAddResult">
       <ObjectId>1621580815</ObjectId>
       <CreatedTimestamp>2017-06-21.15:13:08.767</CreatedTimestamp>
       <ModifiedTimestamp>2017-06-21.15:13:08.767</ModifiedTimestamp>
       <RoutineKind>procedure</RoutineKind>
       <RoutineType>proc</RoutineType>
     </routine>
-    <routine id="27" parent="5" name="spAddToCoalition">
+    <routine id="30" parent="5" name="spAddToCoalition">
       <ObjectId>1701581100</ObjectId>
       <CreatedTimestamp>2017-06-21.15:20:11.407</CreatedTimestamp>
       <ModifiedTimestamp>2017-06-21.15:20:11.407</ModifiedTimestamp>
       <RoutineKind>procedure</RoutineKind>
       <RoutineType>proc</RoutineType>
     </routine>
-    <routine id="28" parent="5" name="spCheckForUser">
+    <routine id="31" parent="5" name="spCheckForUser">
       <ObjectId>1205579333</ObjectId>
       <CreatedTimestamp>2017-05-26.14:28:03.457</CreatedTimestamp>
       <ModifiedTimestamp>2017-05-26.14:30:32.027</ModifiedTimestamp>
       <RoutineKind>procedure</RoutineKind>
       <RoutineType>proc</RoutineType>
     </routine>
-    <routine id="29" parent="5" name="spCreateNewSave">
+    <routine id="32" parent="5" name="spCreateNewSave">
       <ObjectId>901578250</ObjectId>
       <CreatedTimestamp>2017-05-02.11:36:33.360</CreatedTimestamp>
       <ModifiedTimestamp>2017-06-04.13:33:34.897</ModifiedTimestamp>
       <RoutineKind>procedure</RoutineKind>
       <RoutineType>proc</RoutineType>
     </routine>
-    <routine id="30" parent="5" name="spGenerateShipStats">
+    <routine id="33" parent="5" name="spGenerateShipStats">
       <ObjectId>1365579903</ObjectId>
       <CreatedTimestamp>2017-06-04.12:38:34.380</CreatedTimestamp>
       <ModifiedTimestamp>2017-06-04.12:44:31.920</ModifiedTimestamp>
       <RoutineKind>procedure</RoutineKind>
       <RoutineType>proc</RoutineType>
     </routine>
-    <routine id="31" parent="5" name="spGetAllItems">
+    <routine id="34" parent="5" name="spGetAllItems">
       <ObjectId>1413580074</ObjectId>
       <CreatedTimestamp>2017-06-04.22:38:30.253</CreatedTimestamp>
       <ModifiedTimestamp>2017-06-05.17:12:51.457</ModifiedTimestamp>
       <RoutineKind>procedure</RoutineKind>
       <RoutineType>proc</RoutineType>
     </routine>
-    <routine id="32" parent="5" name="spGetAllNodes">
+    <routine id="35" parent="5" name="spGetAllNodes">
       <ObjectId>1349579846</ObjectId>
       <CreatedTimestamp>2017-05-31.22:25:13.227</CreatedTimestamp>
       <ModifiedTimestamp>2017-05-31.22:25:13.227</ModifiedTimestamp>
       <RoutineKind>procedure</RoutineKind>
       <RoutineType>proc</RoutineType>
     </routine>
-    <routine id="33" parent="5" name="spGetAllParties">
+    <routine id="36" parent="5" name="spGetAllParties">
       <ObjectId>1605580758</ObjectId>
       <CreatedTimestamp>2017-06-20.16:46:28.360</CreatedTimestamp>
       <ModifiedTimestamp>2017-06-20.16:46:28.360</ModifiedTimestamp>
       <RoutineKind>procedure</RoutineKind>
       <RoutineType>proc</RoutineType>
     </routine>
-    <routine id="34" parent="5" name="spGetAllSaves">
+    <routine id="37" parent="5" name="spGetAllSaves">
       <ObjectId>1253579504</ObjectId>
       <CreatedTimestamp>2017-05-28.16:32:28.580</CreatedTimestamp>
       <ModifiedTimestamp>2017-05-31.17:04:47.190</ModifiedTimestamp>
       <RoutineKind>procedure</RoutineKind>
       <RoutineType>proc</RoutineType>
     </routine>
-    <routine id="35" parent="5" name="spGetAllShips">
+    <routine id="38" parent="5" name="spGetAllShips">
       <ObjectId>1397580017</ObjectId>
       <CreatedTimestamp>2017-06-04.13:27:16.230</CreatedTimestamp>
       <ModifiedTimestamp>2017-06-04.22:14:20.263</ModifiedTimestamp>
       <RoutineKind>procedure</RoutineKind>
       <RoutineType>proc</RoutineType>
     </routine>
-    <routine id="36" parent="5" name="spGetEnemies">
+    <routine id="39" parent="5" name="spGetEnemies">
       <ObjectId>1429580131</ObjectId>
       <CreatedTimestamp>2017-06-05.21:29:31.120</CreatedTimestamp>
       <ModifiedTimestamp>2017-06-05.22:31:46.763</ModifiedTimestamp>
       <RoutineKind>procedure</RoutineKind>
       <RoutineType>proc</RoutineType>
     </routine>
-    <routine id="37" parent="5" name="spGetQuote">
+    <routine id="40" parent="5" name="spGetQuote">
       <ObjectId>1333579789</ObjectId>
       <CreatedTimestamp>2017-05-31.21:52:18.073</CreatedTimestamp>
       <ModifiedTimestamp>2017-05-31.21:55:09.463</ModifiedTimestamp>
       <RoutineKind>procedure</RoutineKind>
       <RoutineType>proc</RoutineType>
     </routine>
-    <routine id="38" parent="5" name="spReseedTable">
+    <routine id="41" parent="5" name="spReseedTable">
       <ObjectId>1221579390</ObjectId>
       <CreatedTimestamp>2017-05-26.14:57:25.677</CreatedTimestamp>
       <ModifiedTimestamp>2017-06-03.19:41:24.523</ModifiedTimestamp>
       <RoutineKind>procedure</RoutineKind>
       <RoutineType>proc</RoutineType>
     </routine>
-    <routine id="39" parent="5" name="spShipList">
+    <routine id="42" parent="5" name="spShipList">
       <ObjectId>885578193</ObjectId>
       <CreatedTimestamp>2017-05-02.11:27:22.733</CreatedTimestamp>
       <ModifiedTimestamp>2017-05-02.11:27:22.733</ModifiedTimestamp>
       <RoutineKind>procedure</RoutineKind>
       <RoutineType>proc</RoutineType>
     </routine>
-    <column id="40" parent="18" name="id">
+    <column id="43" parent="18" name="id">
       <Position>1</Position>
       <SequenceIdentity>1</SequenceIdentity>
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="41" parent="18" name="flavour">
+    <column id="44" parent="18" name="flavour">
       <Position>2</Position>
       <DataType>varchar(255 char)|0s</DataType>
     </column>
-    <index id="42" parent="18" name="PK__Cake__3213E83F3C3F93B5">
+    <index id="45" parent="18" name="PK__Cake__3213E83F8D01899F">
       <Position>1</Position>
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Clustering>1</Clustering>
       <Unique>1</Unique>
     </index>
-    <key id="43" parent="18" name="PK__Cake__3213E83F3C3F93B5">
-      <ObjectId>50099219</ObjectId>
+    <key id="46" parent="18" name="PK__Cake__3213E83F8D01899F">
+      <ObjectId>1102626971</ObjectId>
       <NameSurrogate>1</NameSurrogate>
-      <CreatedTimestamp>2018-05-14.13:07:03.583</CreatedTimestamp>
-      <ModifiedTimestamp>2018-05-14.13:07:03.583</ModifiedTimestamp>
+      <CreatedTimestamp>2018-06-17.13:13:14.030</CreatedTimestamp>
+      <ModifiedTimestamp>2018-06-17.13:13:14.030</ModifiedTimestamp>
       <ColNames>id</ColNames>
-      <UnderlyingIndexName>PK__Cake__3213E83F3C3F93B5</UnderlyingIndexName>
+      <UnderlyingIndexName>PK__Cake__3213E83F8D01899F</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="44" parent="19" name="id">
+    <column id="47" parent="19" name="id">
       <Position>1</Position>
       <SequenceIdentity>1</SequenceIdentity>
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="45" parent="19" name="name">
+    <column id="48" parent="19" name="name">
       <Position>2</Position>
       <DataType>varchar(255 char)|0s</DataType>
     </column>
-    <column id="46" parent="19" name="flavour">
+    <column id="49" parent="19" name="flavour">
       <Position>3</Position>
       <DataType>varchar(255 char)|0s</DataType>
     </column>
-    <index id="47" parent="19" name="PK__Cookie__3213E83FD8310959">
+    <index id="50" parent="19" name="PK__Cookie__3213E83FD8310959">
       <Position>1</Position>
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Clustering>1</Clustering>
       <Unique>1</Unique>
     </index>
-    <key id="48" parent="19" name="PK__Cookie__3213E83FD8310959">
+    <key id="51" parent="19" name="PK__Cookie__3213E83FD8310959">
       <ObjectId>2117582582</ObjectId>
       <NameSurrogate>1</NameSurrogate>
       <CreatedTimestamp>2018-05-07.13:34:45.493</CreatedTimestamp>
@@ -256,233 +271,341 @@
       <UnderlyingIndexName>PK__Cookie__3213E83FD8310959</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="49" parent="20" name="id">
+    <column id="52" parent="20" name="id">
       <Position>1</Position>
       <SequenceIdentity>1</SequenceIdentity>
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="50" parent="20" name="soort">
+    <column id="53" parent="20" name="ceo">
       <Position>2</Position>
       <DataType>varchar(255 char)|0s</DataType>
     </column>
-    <index id="51" parent="20" name="PK__Fruit__3213E83F4BF52843">
+    <column id="54" parent="20" name="name">
+      <Position>3</Position>
+      <DataType>varchar(255 char)|0s</DataType>
+    </column>
+    <index id="55" parent="20" name="PK__Develope__3213E83F6FA4CC42">
       <Position>1</Position>
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Clustering>1</Clustering>
       <Unique>1</Unique>
     </index>
-    <key id="52" parent="20" name="PK__Fruit__3213E83F4BF52843">
-      <ObjectId>2099048</ObjectId>
+    <key id="56" parent="20" name="PK__Develope__3213E83F6FA4CC42">
+      <ObjectId>1134627085</ObjectId>
       <NameSurrogate>1</NameSurrogate>
-      <CreatedTimestamp>2018-05-07.13:42:18.700</CreatedTimestamp>
-      <ModifiedTimestamp>2018-05-07.13:42:18.700</ModifiedTimestamp>
+      <CreatedTimestamp>2018-06-17.13:13:14.140</CreatedTimestamp>
+      <ModifiedTimestamp>2018-06-17.13:13:14.140</ModifiedTimestamp>
       <ColNames>id</ColNames>
-      <UnderlyingIndexName>PK__Fruit__3213E83F4BF52843</UnderlyingIndexName>
+      <UnderlyingIndexName>PK__Develope__3213E83F6FA4CC42</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="53" parent="21" name="id">
+    <column id="57" parent="21" name="developers_id">
       <Position>1</Position>
-      <SequenceIdentity>1</SequenceIdentity>
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="54" parent="21" name="name">
+    <column id="58" parent="21" name="games_id">
       <Position>2</Position>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <foreign-key id="59" parent="21" name="FKpqsscrvj3uk7abhq7q8n4nx3n">
+      <ObjectId>1342627826</ObjectId>
+      <CreatedTimestamp>2018-06-17.13:13:14.873</CreatedTimestamp>
+      <ModifiedTimestamp>2018-06-17.13:13:14.873</ModifiedTimestamp>
+      <ColNames>developers_id</ColNames>
+      <RefTableId>1118627028</RefTableId>
+      <RefSchemaName>dbo</RefSchemaName>
+      <RefTableName>Developer</RefTableName>
+      <RefKeyName>PK__Develope__3213E83F6FA4CC42</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="60" parent="21" name="FK5qp9el4vomelrkfoya5twi4wv">
+      <ObjectId>1326627769</ObjectId>
+      <CreatedTimestamp>2018-06-17.13:13:14.820</CreatedTimestamp>
+      <ModifiedTimestamp>2018-06-17.13:13:14.820</ModifiedTimestamp>
+      <ColNames>games_id</ColNames>
+      <RefTableId>1198627313</RefTableId>
+      <RefSchemaName>dbo</RefSchemaName>
+      <RefTableName>Game</RefTableName>
+      <RefKeyName>PK__Game__3213E83F31620A43</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="61" parent="22" name="parent">
+      <Position>1</Position>
       <DataType>varchar(255 char)|0s</DataType>
     </column>
-    <column id="55" parent="21" name="price">
-      <Position>3</Position>
-      <DataType>int|0s</DataType>
+    <column id="62" parent="22" name="id">
+      <Position>2</Position>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
     </column>
-    <column id="56" parent="21" name="url">
-      <Position>4</Position>
-      <DataType>varchar(255 char)|0s</DataType>
-    </column>
-    <index id="57" parent="21" name="PK__Game__3213E83FB39F8DB4">
+    <index id="63" parent="22" name="PK__FirstPar__3213E83F412502DA">
       <Position>1</Position>
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Clustering>1</Clustering>
       <Unique>1</Unique>
     </index>
-    <key id="58" parent="21" name="PK__Game__3213E83FB39F8DB4">
-      <ObjectId>1026102696</ObjectId>
+    <key id="64" parent="22" name="PK__FirstPar__3213E83F412502DA">
+      <ObjectId>1182627256</ObjectId>
       <NameSurrogate>1</NameSurrogate>
-      <CreatedTimestamp>2018-06-16.16:54:26.427</CreatedTimestamp>
-      <ModifiedTimestamp>2018-06-16.16:54:26.427</ModifiedTimestamp>
+      <CreatedTimestamp>2018-06-17.13:13:14.387</CreatedTimestamp>
+      <ModifiedTimestamp>2018-06-17.13:13:14.387</ModifiedTimestamp>
       <ColNames>id</ColNames>
-      <UnderlyingIndexName>PK__Game__3213E83FB39F8DB4</UnderlyingIndexName>
+      <UnderlyingIndexName>PK__FirstPar__3213E83F412502DA</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="59" parent="22" name="id">
+    <foreign-key id="65" parent="22" name="FKjlp8bnu2y4tpeh5ggrjstvs3w">
+      <ObjectId>1358627883</ObjectId>
+      <CreatedTimestamp>2018-06-17.13:13:14.923</CreatedTimestamp>
+      <ModifiedTimestamp>2018-06-17.13:13:14.923</ModifiedTimestamp>
+      <ColNames>id</ColNames>
+      <RefTableId>1118627028</RefTableId>
+      <RefSchemaName>dbo</RefSchemaName>
+      <RefTableName>Developer</RefTableName>
+      <RefKeyName>PK__Develope__3213E83F6FA4CC42</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="66" parent="23" name="id">
       <Position>1</Position>
       <SequenceIdentity>1</SequenceIdentity>
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="60" parent="22" name="reviewText">
+    <column id="67" parent="23" name="name">
       <Position>2</Position>
       <DataType>varchar(255 char)|0s</DataType>
     </column>
-    <column id="61" parent="22" name="score">
+    <column id="68" parent="23" name="price">
       <Position>3</Position>
       <DataType>int|0s</DataType>
     </column>
-    <column id="62" parent="22" name="game_id">
+    <column id="69" parent="23" name="url">
+      <Position>4</Position>
+      <DataType>varchar(255 char)|0s</DataType>
+    </column>
+    <index id="70" parent="23" name="PK__Game__3213E83F31620A43">
+      <Position>1</Position>
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="71" parent="23" name="PK__Game__3213E83F31620A43">
+      <ObjectId>1214627370</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2018-06-17.13:13:14.510</CreatedTimestamp>
+      <ModifiedTimestamp>2018-06-17.13:13:14.510</ModifiedTimestamp>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>PK__Game__3213E83F31620A43</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="72" parent="24" name="id">
+      <Position>1</Position>
+      <SequenceIdentity>1</SequenceIdentity>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="73" parent="24" name="reviewText">
+      <Position>2</Position>
+      <DataType>varchar(255 char)|0s</DataType>
+    </column>
+    <column id="74" parent="24" name="score">
+      <Position>3</Position>
+      <DataType>int|0s</DataType>
+    </column>
+    <column id="75" parent="24" name="game_id">
       <Position>4</Position>
       <DataType>bigint|0s</DataType>
     </column>
-    <column id="63" parent="22" name="user_id">
+    <column id="76" parent="24" name="user_id">
       <Position>5</Position>
       <DataType>bigint|0s</DataType>
     </column>
-    <index id="64" parent="22" name="PK__Review__3213E83F61AA4FA9">
+    <index id="77" parent="24" name="PK__Review__3213E83F5A5CC68C">
       <Position>1</Position>
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Clustering>1</Clustering>
       <Unique>1</Unique>
     </index>
-    <key id="65" parent="22" name="PK__Review__3213E83F61AA4FA9">
-      <ObjectId>1058102810</ObjectId>
+    <key id="78" parent="24" name="PK__Review__3213E83F5A5CC68C">
+      <ObjectId>1246627484</ObjectId>
       <NameSurrogate>1</NameSurrogate>
-      <CreatedTimestamp>2018-06-16.16:54:27.510</CreatedTimestamp>
-      <ModifiedTimestamp>2018-06-16.16:54:27.510</ModifiedTimestamp>
+      <CreatedTimestamp>2018-06-17.13:13:14.610</CreatedTimestamp>
+      <ModifiedTimestamp>2018-06-17.13:13:14.610</ModifiedTimestamp>
       <ColNames>id</ColNames>
-      <UnderlyingIndexName>PK__Review__3213E83F61AA4FA9</UnderlyingIndexName>
+      <UnderlyingIndexName>PK__Review__3213E83F5A5CC68C</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="66" parent="22" name="FKjvle2bvwed2gao2qpudqhkasi">
-      <ObjectId>1106102981</ObjectId>
-      <CreatedTimestamp>2018-06-16.16:54:28.583</CreatedTimestamp>
-      <ModifiedTimestamp>2018-06-16.16:54:28.583</ModifiedTimestamp>
+    <foreign-key id="79" parent="24" name="FKjvle2bvwed2gao2qpudqhkasi">
+      <ObjectId>1374627940</ObjectId>
+      <CreatedTimestamp>2018-06-17.13:13:15</CreatedTimestamp>
+      <ModifiedTimestamp>2018-06-17.13:13:15</ModifiedTimestamp>
       <ColNames>game_id</ColNames>
-      <RefTableId>1010102639</RefTableId>
+      <RefTableId>1198627313</RefTableId>
       <RefSchemaName>dbo</RefSchemaName>
       <RefTableName>Game</RefTableName>
-      <RefKeyName>PK__Game__3213E83FB39F8DB4</RefKeyName>
+      <RefKeyName>PK__Game__3213E83F31620A43</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="67" parent="22" name="FK3tolkcf0pn0hof4755i0ekwcn">
-      <ObjectId>1122103038</ObjectId>
-      <CreatedTimestamp>2018-06-16.16:54:31.463</CreatedTimestamp>
-      <ModifiedTimestamp>2018-06-16.16:54:31.463</ModifiedTimestamp>
+    <foreign-key id="80" parent="24" name="FK3tolkcf0pn0hof4755i0ekwcn">
+      <ObjectId>1390627997</ObjectId>
+      <CreatedTimestamp>2018-06-17.13:13:15.073</CreatedTimestamp>
+      <ModifiedTimestamp>2018-06-17.13:13:15.073</ModifiedTimestamp>
       <ColNames>user_id</ColNames>
-      <RefTableId>1074102867</RefTableId>
+      <RefTableId>1294627655</RefTableId>
       <RefSchemaName>dbo</RefSchemaName>
       <RefTableName>Users</RefTableName>
-      <RefKeyName>PK__Users__3213E83F1D53746E</RefKeyName>
+      <RefKeyName>PK__Users__3213E83F9FE1DE75</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="68" parent="23" name="id">
+    <column id="81" parent="25" name="indieStudio">
+      <Position>1</Position>
+      <DataType>bit|0s</DataType>
+    </column>
+    <column id="82" parent="25" name="id">
+      <Position>2</Position>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="83" parent="25" name="PK__ThirdPar__3213E83F1045B140">
+      <Position>1</Position>
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="84" parent="25" name="PK__ThirdPar__3213E83F1045B140">
+      <ObjectId>1278627598</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2018-06-17.13:13:14.693</CreatedTimestamp>
+      <ModifiedTimestamp>2018-06-17.13:13:14.693</ModifiedTimestamp>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>PK__ThirdPar__3213E83F1045B140</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="85" parent="25" name="FKd5cl9xw23agxkfrdso1hm92hk">
+      <ObjectId>1406628054</ObjectId>
+      <CreatedTimestamp>2018-06-17.13:13:15.130</CreatedTimestamp>
+      <ModifiedTimestamp>2018-06-17.13:13:15.130</ModifiedTimestamp>
+      <ColNames>id</ColNames>
+      <RefTableId>1118627028</RefTableId>
+      <RefSchemaName>dbo</RefSchemaName>
+      <RefTableName>Developer</RefTableName>
+      <RefKeyName>PK__Develope__3213E83F6FA4CC42</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="86" parent="26" name="id">
       <Position>1</Position>
       <SequenceIdentity>1</SequenceIdentity>
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="69" parent="23" name="isAdmin">
+    <column id="87" parent="26" name="isAdmin">
       <Position>2</Position>
       <DataType>bit|0s</DataType>
     </column>
-    <column id="70" parent="23" name="password">
+    <column id="88" parent="26" name="password">
       <Position>3</Position>
       <DataType>varchar(255 char)|0s</DataType>
     </column>
-    <column id="71" parent="23" name="username">
+    <column id="89" parent="26" name="username">
       <Position>4</Position>
       <DataType>varchar(255 char)|0s</DataType>
     </column>
-    <index id="72" parent="23" name="PK__Users__3213E83F1D53746E">
+    <index id="90" parent="26" name="PK__Users__3213E83F9FE1DE75">
       <Position>1</Position>
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Clustering>1</Clustering>
       <Unique>1</Unique>
     </index>
-    <key id="73" parent="23" name="PK__Users__3213E83F1D53746E">
-      <ObjectId>1090102924</ObjectId>
+    <key id="91" parent="26" name="PK__Users__3213E83F9FE1DE75">
+      <ObjectId>1310627712</ObjectId>
       <NameSurrogate>1</NameSurrogate>
-      <CreatedTimestamp>2018-06-16.16:54:27.927</CreatedTimestamp>
-      <ModifiedTimestamp>2018-06-16.16:54:27.927</ModifiedTimestamp>
+      <CreatedTimestamp>2018-06-17.13:13:14.753</CreatedTimestamp>
+      <ModifiedTimestamp>2018-06-17.13:13:14.753</ModifiedTimestamp>
       <ColNames>id</ColNames>
-      <UnderlyingIndexName>PK__Users__3213E83F1D53746E</UnderlyingIndexName>
+      <UnderlyingIndexName>PK__Users__3213E83F9FE1DE75</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <argument id="74" parent="26" name="@Naam">
+    <argument id="92" parent="29" name="@Naam">
       <Position>1</Position>
       <DataType>varchar(55 char)|0s</DataType>
     </argument>
-    <argument id="75" parent="26" name="@Datum">
+    <argument id="93" parent="29" name="@Datum">
       <Position>2</Position>
       <DataType>datetime|0s</DataType>
     </argument>
-    <argument id="76" parent="26" name="@Premier">
+    <argument id="94" parent="29" name="@Premier">
       <Position>3</Position>
       <DataType>varchar(55 char)|0s</DataType>
     </argument>
-    <argument id="77" parent="27" name="@PartijID">
+    <argument id="95" parent="30" name="@PartijID">
       <Position>1</Position>
       <DataType>int|0s</DataType>
     </argument>
-    <argument id="78" parent="27" name="@Zetels">
+    <argument id="96" parent="30" name="@Zetels">
       <Position>2</Position>
       <DataType>int|0s</DataType>
     </argument>
-    <argument id="79" parent="27" name="@UitslagNaam">
+    <argument id="97" parent="30" name="@UitslagNaam">
       <Position>3</Position>
       <DataType>varchar(55 char)|0s</DataType>
     </argument>
-    <argument id="80" parent="28" name="@Username">
+    <argument id="98" parent="31" name="@Username">
       <Position>1</Position>
       <DataType>varchar(30 char)|0s</DataType>
     </argument>
-    <argument id="81" parent="29" name="@SaveName">
+    <argument id="99" parent="32" name="@SaveName">
       <Position>1</Position>
       <DataType>varchar(30 char)|0s</DataType>
     </argument>
-    <argument id="82" parent="29" name="@date">
+    <argument id="100" parent="32" name="@date">
       <Position>2</Position>
       <DataType>datetime|0s</DataType>
     </argument>
-    <argument id="83" parent="29" name="@Map">
+    <argument id="101" parent="32" name="@Map">
       <Position>3</Position>
       <DataType>varchar(30 char)|0s</DataType>
     </argument>
-    <argument id="84" parent="29" name="@Username">
+    <argument id="102" parent="32" name="@Username">
       <Position>4</Position>
       <DataType>varchar(30 char)|0s</DataType>
     </argument>
-    <argument id="85" parent="29" name="@SaveSlot">
+    <argument id="103" parent="32" name="@SaveSlot">
       <Position>5</Position>
       <DataType>int|0s</DataType>
     </argument>
-    <argument id="86" parent="30" name="@ShipID">
+    <argument id="104" parent="33" name="@ShipID">
       <Position>1</Position>
       <DataType>int|0s</DataType>
     </argument>
-    <argument id="87" parent="31" name="@SaveID">
+    <argument id="105" parent="34" name="@SaveID">
       <Position>1</Position>
       <DataType>int|0s</DataType>
     </argument>
-    <argument id="88" parent="32" name="@MapID">
+    <argument id="106" parent="35" name="@MapID">
       <Position>1</Position>
       <DataType>int|0s</DataType>
     </argument>
-    <argument id="89" parent="34" name="@Username">
+    <argument id="107" parent="37" name="@Username">
       <Position>1</Position>
       <DataType>varchar(30 char)|0s</DataType>
     </argument>
-    <argument id="90" parent="35" name="@SaveID">
+    <argument id="108" parent="38" name="@SaveID">
       <Position>1</Position>
       <DataType>int|0s</DataType>
     </argument>
-    <argument id="91" parent="36" name="@NodeID">
+    <argument id="109" parent="39" name="@NodeID">
       <Position>1</Position>
       <DataType>int|0s</DataType>
     </argument>
-    <argument id="92" parent="38" name="@TableName">
+    <argument id="110" parent="41" name="@TableName">
       <Position>1</Position>
       <DataType>varchar(50 char)|0s</DataType>
     </argument>

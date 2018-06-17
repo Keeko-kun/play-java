@@ -1,5 +1,5 @@
 var app = angular.module("switch-it-up", []);
-app.controller("switchCtrl", function ($scope, $http, $location) {
+app.controller("switchCtrl", function ($scope, $http, $window) {
     $scope.game = new Game();
 
     $scope.score = '';
@@ -8,13 +8,31 @@ app.controller("switchCtrl", function ($scope, $http, $location) {
     $scope.verified = false;
     $scope.loaded = false;
 
-    $scope.post = function(){
-
-        console.log("post");
-    };
-
     var id = window.location.pathname.split('/').pop();
     console.log(id);
+
+    $scope.post = function(){
+
+        var score = parseInt($scope.score);
+
+        if (isNaN(score)){
+            console.log("value is bad");
+            return;
+        }
+        else if(score > 100 || score < 0){
+            return;
+        }
+
+        $http({
+            url: "../review/" + id + "/" + score + "/" + $scope.review + "/" + getCookie("token"),
+            method: "POST"
+        }).then(function successCallback(response) {
+            console.log("hey");
+            $window.location.reload();
+        }, function errorCallback(response) {
+            $scope.error = response.statusText;
+        });
+    };
 
     $http({
         url: "../game/" + id,

@@ -1,13 +1,21 @@
 var app = angular.module("switch-it-up", []);
 app.controller("switchCtrl", function ($scope, $http, $window) {
     $scope.games = [];
+    $scope.developers = [];
 
     $scope.name = '';
     $scope.price = '';
     $scope.url = '';
+    $scope.selectedDev = [];
+
+    $scope.studio = '';
+    $scope.ceo = '';
+    $scope.parent = '';
+    $scope.indie = false;
 
     $scope.admin = false;
     $scope.loaded = false;
+    $scope.thirdParty = false;
 
     $scope.addGame = function(){
 
@@ -19,7 +27,7 @@ app.controller("switchCtrl", function ($scope, $http, $window) {
         }
 
         $http({
-            url: "games/" + $scope.name + "/" + price + "/" + $scope.url,
+            url: "games/" + $scope.name + "/" + price + "/" + $scope.url + "/" + $scope.selectedDev.id,
             method: "POST"
         }).then(function successCallback(response) {
             $window.location.reload();
@@ -28,12 +36,35 @@ app.controller("switchCtrl", function ($scope, $http, $window) {
         });
     };
 
+    $scope.addDeveloper = function(){
+        if ($scope.parent == ''){
+            $scope.parent = 'NaN';
+        }
+
+        $http({
+            url: "developer/" + $scope.studio + "/" +  $scope.ceo + "/" + $scope.thirdParty + "/" + $scope.parent + "/" + $scope.indie,
+            method: "POST"
+        }).then(function successCallback(response) {
+            $window.location.reload();
+        }, function errorCallback(response) {
+            $scope.error = response.statusText;
+        });
+    }
+
     $http({
         url: "game",
         method: "GET"
     }).then(function successCallback(response) {
         $scope.games = response.data;
-        $scope.loaded = true;
+        $http({
+            url: "developer",
+            method: "POST"
+        }).then(function successCallback(response) {
+            $scope.developers = response.data;
+            $scope.loaded = true;
+        }, function errorCallback(response) {
+            $scope.error = response.statusText;
+        });
     }, function errorCallback(response) {
         $scope.error = response.statusText;
     });
